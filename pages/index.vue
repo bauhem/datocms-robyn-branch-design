@@ -1,5 +1,6 @@
 <template>
   <div>
+    <FeedbackForm />
 
   </div>
 </template>
