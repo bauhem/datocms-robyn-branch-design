@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Alert />
     <NavBar />
     <slot />
     <Footer />
