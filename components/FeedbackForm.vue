@@ -5,7 +5,7 @@
       netlify-honeypot
       name="feedback"
       method="POST"
-      action="/success"
+      :action="'/success'"
     >
       <p class="hidden">
         <label>

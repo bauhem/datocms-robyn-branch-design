@@ -1,5 +1,68 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  alias: {
+      "@app": "/@app"
+  },
+  app: {
+    head: {
+      title: 'robin-branch-designs',
+      htmlAttrs: {
+        lang: 'en',
+        'data-wf-site': '6388d1f4ab22f1a8fc67233a',
+      },
+      meta: [
+        {
+          charset: 'utf-8',
+        },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+        {
+          name: 'format-detection',
+          content: 'telephone=no',
+        },
+      ],
+      script: [
+
+        {
+          src: 'https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6388d1f4ab22f1a8fc67233a',
+          type: 'module',
+          integrity: 'sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=',
+          crossorigin: 'anonymous',
+        },
+        {
+          src: '',
+          type: 'module',
+          body: true,
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico',
+        },
+        {
+          rel: 'stylesheet',
+          href: '',
+        },
+        {
+          rel: 'stylesheet',
+          href: '',
+        },
+        {
+          rel: 'stylesheet',
+          href: '',
+        },
+      ],
+    },
+  },
   runtimeConfig: {
     previewModeEncryptionSecret:
       // !> Before releasing to production, see the README
