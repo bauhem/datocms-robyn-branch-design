@@ -15,7 +15,7 @@ const route = useRoute()
 const { data } = await useGraphqlQuery({
   query: `
     {
-      page: home {
+      page: about {
         _seoMetaTags {
           ...seoMetaTagsFields
         }
@@ -25,26 +25,10 @@ const { data } = await useGraphqlQuery({
           ...seoMetaTagsFields
         }
       }
-      posts: allPosts(first: 10, orderBy: _firstPublishedAt_DESC) {
-        id
-        title
-        slug
-        publicationDate: _firstPublishedAt
-        excerpt
-        coverImage {
-          responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
-            ...imageFields
-          }
-        }
-      }
     }
-
-    ${imageFields}
     ${seoMetaTagsFields}
   `,
 })
-
-const posts = computed(() => data.value?.posts || [])
 
 useHead(() => {
   if (!data.value) {
