@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "bash ./bin/double-build.sh",
+    "build": "yarn generate",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
