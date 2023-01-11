@@ -15,12 +15,16 @@ const route = useRoute()
 const { data } = await useGraphqlQuery({
   query: `
     {
+      home {
+        _seoMetaTags {
+          ...seoMetaTagsFields
+        }
+      }
       site: _site {
         favicon: faviconMetaTags {
           ...seoMetaTagsFields
         }
       }
-
       posts: allPosts(first: 10, orderBy: _firstPublishedAt_DESC) {
         id
         title
@@ -50,6 +54,13 @@ const { data } = await useGraphqlQuery({
 
 const posts = computed(() => data.value?.posts || [])
 
-useHead(() => toHead(data.value?.site?.favicon || {}))
+useHead(() => {
+  if (!data.value) {
+    return {}
+  }
+  return toHead(data.value?.home?._seoMetaTags, data.value?.site?.favicon)
+})
+
+
 
 </script>
