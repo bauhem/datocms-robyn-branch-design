@@ -37,8 +37,7 @@ const { data } = await useGraphqlQuery({
           }
         }
       }
-    }
-
+    } 
     ${imageFields}
     ${seoMetaTagsFields}
   `,
