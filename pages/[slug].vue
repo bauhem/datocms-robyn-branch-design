@@ -23,7 +23,7 @@ import {
 import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
 const route = useRoute()
-let slug = route.params.slug.toString() === "/" ? "home" : route.params.slug.toString()
+let slug = route.params.slug.toString() === "" ? "home" : route.params.slug.toString()
 
 
 const { data } = await useGraphqlQuery({
