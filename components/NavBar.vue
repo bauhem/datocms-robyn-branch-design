@@ -10,15 +10,14 @@
               <div class="close-menu-button w-nav-button"><img src="/images/close.png"  width="16" alt="" class="close-icon"></div>
             </div>
             <div class="nav-block-left">
-              <a v-for="item in data.page" :key="item.id" :href="item.slug" class="nav-link">{{ item.title }}</a>
+              <a v-for="item in data.navLeft" :key="item.id" :href="item.slug" class="nav-link">{{ item.title }}</a>
             </div>
             <a href="/" aria-current="page" class="brand-menu w-nav-brand w--current">
               <img src="/images/favicon.png"  alt="">
               <img src="/images/logo-middle.png"  alt="" class="logo-text"></a>
             <div class="nav-block-right">
-              <a href="press.html" class="nav-link">press</a>
-              <a href="collaboration-listing.html" class="nav-link">collaboration</a>
-              <a href="contact.html" class="button in-navbar w-button">Contact Us</a>
+             <a v-for="item in data.navRight" :key="item.id" :href="item.slug" class="nav-link">{{ item.title }}</a>
+             <a :href="data.contact.slug" class="button in-navbar">{{ data.contact.title }}</a>
             </div>
           </div>
         </nav>
@@ -34,7 +33,17 @@
 
 const { data } = await useGraphqlQuery({
   query: `query Page {
-        page: allPages(orderBy: position_ASC, skip: 1) {
+        navLeft: allPages(orderBy: position_ASC, skip: 1, first: 3) {
+          position
+          title
+          slug
+        }
+        navRight: allPages(filter: {slug: {neq: "contact"}}, orderBy: position_ASC, skip: 4, first: 3) {
+          position
+          title
+          slug
+        }
+         contact: page(filter: {slug: {eq: "contact"}}) {
           position
           title
           slug
