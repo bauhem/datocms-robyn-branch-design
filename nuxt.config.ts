@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       title: 'robin-branch-designs',
       htmlAttrs: {
         lang: 'en',
-        'data-wf-site': '6388d1f4ab22f1a8fc67233a',
+        'data-wf-site': '63befb04b81ae07395cfa80b',
       },
       meta: [
         {
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
           crossorigin: 'anonymous',
         },
         {
-          src: '',
+          src: '/js/webflow.js',
           type: 'module',
           body: true,
         },
@@ -46,19 +46,19 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/favicon.ico',
+          href: '/favicon.png',
         },
         {
           rel: 'stylesheet',
-          href: '',
+          href: '/style/normalize.css',
         },
         {
           rel: 'stylesheet',
-          href: '',
+          href: '/style/webflow.css',
         },
         {
           rel: 'stylesheet',
-          href: '',
+          href: '/style/robyn-branch-design.webflow.css',
         },
       ],
     },
