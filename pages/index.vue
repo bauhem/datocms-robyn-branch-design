@@ -36,7 +36,6 @@ const { data } = await useGraphqlQuery({
           blocks {
             __typename
             ... on HeroRecord {
-              _modelApiKey
               id
               image {
                 responsiveImage(
@@ -46,16 +45,9 @@ const { data } = await useGraphqlQuery({
                 }
               }
             }
-            ... on ImageBlockRecord {
-              _modelApiKey
+            ... on PortfolioListRecord {
               id
-              image {
-                responsiveImage(
-                  imgixParams: { fm: jpg, fit: crop, w: 2000, h: 1000 }
-                ) {
-                  ...imageFields
-                }
-              }
+              title
             }
           }
         }
