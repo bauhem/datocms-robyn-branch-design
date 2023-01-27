@@ -1,7 +1,7 @@
 <template>
   <section class="footer wf-section">
     <div class="container">
-      <a href="#" class="brand-footer w-nav-brand"><img src="/images/favicon.png"  alt=""><img src="/images/logo-small.png"  alt="" class="logo-text"></a>
+      <a href="/" class="brand-footer w-nav-brand"><img src="/images/favicon.png"  alt=""><img src="/images/logo-small.png"  alt="" class="logo-text"></a>
       <div class="divider"></div>
       <div class="footer-wrapper">
         <div class="footer-content">
