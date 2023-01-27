@@ -14,7 +14,9 @@
               <a href="portfolio-commercial.html" class="nav-link">commercial</a>
               <a href="about.html" class="nav-link">about</a>
             </div>
-            <a href="index.html" aria-current="page" class="brand-menu w-nav-brand w--current"><img src="/images/favicon.png"  alt=""><img src="/images/logo-middle.png"  alt="" class="logo-text"></a>
+            <a href="index.html" aria-current="page" class="brand-menu w-nav-brand w--current">
+              <img src="/images/favicon.png"  alt="">
+              <img src="/images/logo-middle.png"  alt="" class="logo-text"></a>
             <div class="nav-block-right">
               <a href="press.html" class="nav-link">press</a>
               <a href="collaboration-listing.html" class="nav-link">collaboration</a>
