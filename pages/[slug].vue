@@ -9,7 +9,6 @@
       v-bind:item="component.data"
     />
 
-    <FeedbackForm />
   </div>
 </template>
 
@@ -57,6 +56,16 @@ const { data } = await useGraphqlQuery({
               ... on CtaBannerRecord {
                 id
                 title
+                image {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
+                    ...imageFields
+                  }
+                }
+              }
+              ... on AboutUsModelRecord {
+                id
+                title
+                description
                 image {
                   responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
                     ...imageFields
