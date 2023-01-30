@@ -51,7 +51,7 @@ const { data } = await useGraphqlQuery({
         }
       }
 
-      post(filter: { slug: { eq: $slug } }) {
+      portfolio(filter: { slug: { eq: $slug } }) {
         seo: _seoMetaTags {
           ...seoMetaTagsFields
         }
@@ -80,14 +80,6 @@ const { data } = await useGraphqlQuery({
             ...imageFields
           }
         }
-        author {
-          name
-          picture {
-            responsiveImage(imgixParams: { fit: crop, ar: "1:1", w: 40 }) {
-              ...imageFields
-            }
-          }
-        }
       }
     }
 
@@ -99,11 +91,11 @@ const { data } = await useGraphqlQuery({
   },
 })
 
-if (!data.value?.post) {
+if (!data.value?.portfolio) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
 
-const post = computed(() => data.value?.post)
+const post = computed(() => data.value?.portfolio)
 const site = computed(() => data.value?.site)
 
 useHead(() => toHead(post.value?.seo || {}, site.value?.favicon || {}))

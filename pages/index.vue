@@ -49,6 +49,15 @@ const { data } = await useGraphqlQuery({
                 id
                 title
               }
+              ... on CtaBannerRecord {
+                id
+                title
+                image {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
+                    ...imageFields
+                  }
+                }
+              }
             }
           }
         }
