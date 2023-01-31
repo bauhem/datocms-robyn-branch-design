@@ -96,7 +96,7 @@ const components = data.value.page.content.blocks.map((item: { __typename: any }
   return {
     data: data,
     // A note is that if you use path aliases for dynamic imports like @ or ~ you might experience issues.
-    component: defineAsyncComponent(() => import(`@/components/${__typename.replace("Record", "")}.vue`))
+    component: defineAsyncComponent(() => import(`../components/${__typename.replace("Record", "")}.vue`))
   }
 })
 
