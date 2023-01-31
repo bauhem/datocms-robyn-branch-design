@@ -24,16 +24,9 @@
           >
             <div class="project-image-2">
               <div class="background-image">
-                <img
-                  src="/images/1.jpg"
-                  alt=""
-                  sizes="(max-width: 479px) 94vw, (max-width: 767px) 46vw, (max-width: 991px) 45vw, 100vw"
-                  srcset="
-                    /images/1-p-500.jpg  500w,
-                    /images/1-p-800.jpg  800w,
-                    /images/1.jpg       1000w
-                  "
-                  class="project-image"
+                
+                <datocms-image
+                  :data="item.coverImage.responsiveImage"
                 />
               </div>
             </div>
@@ -73,14 +66,31 @@ export default {
 </script>
 
 <script setup>
+import { Image as DatocmsImage } from 'vue-datocms';
+
+
 const { data } = await useGraphqlQuery({
   query: `query Page {
-        project: allPortfolios(orderBy: position_ASC, skip: 1, first: 3) {
+        project: allPortfolios(orderBy: position_ASC) {
           position
           title
           page {
             id
             slug
+          }
+          coverImage {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1000, h: 1000, auto: format }) {
+              aspectRatio
+              base64
+              bgColor
+              height
+              sizes
+              src
+              srcSet
+              title
+              webpSrcSet
+              width
+            }
           }
           slug
           id
