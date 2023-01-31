@@ -1,9 +1,7 @@
 <template>
   <HeroProject :item="post" />
-        <section class="section whitesmoke wf-section">
-    <div
-      class="container"
-    >
+  <section class="section whitesmoke wf-section">
+    <div class="container">
       <ClientOnly>
         <datocms-structured-text
           :data="post.content"
@@ -12,7 +10,6 @@
       </ClientOnly>
     </div>
   </section>
-
 </template>
 
 <script setup lang="ts">
