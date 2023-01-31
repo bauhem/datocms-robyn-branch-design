@@ -75,7 +75,7 @@ const { data } = await useGraphqlQuery({
             ...seoMetaTagsFields
           }
         }
-        posts: allPortfolios(first: 10, orderBy: _firstPublishedAt_DESC) {
+        portfolio: allPortfolios(first: 10, orderBy: _firstPublishedAt_DESC) {
           id
           title
           slug
@@ -93,8 +93,6 @@ const { data } = await useGraphqlQuery({
     ${seoMetaTagsFields}
   `,
 })
-
-const posts = computed(() => data.value?.posts || [])
 
 
 const components = data.value.page.content.blocks.map((item: { __typename: any })=> {
