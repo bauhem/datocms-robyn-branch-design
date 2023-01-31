@@ -1,5 +1,5 @@
 <template>
-  <HeroProject :item="page" :back="collectionData" />
+  <ProjectsHeroProject :item="page" :back="collectionData.portfolio.page" />
   <section class="section whitesmoke wf-section">
     <div class="container">
       <ClientOnly>
