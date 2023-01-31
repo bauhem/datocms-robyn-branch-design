@@ -1,5 +1,5 @@
 <template>
-  <HeroProject :item="page" />
+  <HeroProject :item="page" :back="collectionData" />
   <section class="section whitesmoke wf-section">
     <div class="container">
       <ClientOnly>
@@ -36,6 +36,7 @@ const { data: collectionData }= await useGraphqlQuery({
         title
         page {
           id
+          slug
           title
         }
       }
