@@ -90,13 +90,18 @@ const { data } = await useGraphqlQuery({
 
 
 
-const components = data.value?.page?.content.blocks.map((item: { __typename: any })=> {
+const components = data?.value?.page?.content?.blocks.map((item: { __typename: any })=> {
   const {__typename, ...data} = item;
   // split the data and the component instance so you can v-bind the data easier in the template
-  return {
-    data: data,
-    // A note is that if you use path aliases for dynamic imports like @ or ~ you might experience issues.
-    component: defineAsyncComponent(() => import(`../components/${__typename.replace("Record", "")}.vue`))
+  if (__typename) {
+    // split the data and the component instance so you can v-bind the data easier in the template
+    return {
+      data: data,
+      component: defineAsyncComponent(() => import(`../components/${__typename.replace("Record", "")}.vue`))
+      // A note is that if you use path aliases for dynamic imports like @ or ~ you might experience issues.
+    }
+  } else {
+    return {};
   }
 })
 
