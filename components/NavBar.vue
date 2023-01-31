@@ -10,7 +10,7 @@
               <div class="close-menu-button w-nav-button"><img src="/images/close.png"  width="16" alt="" class="close-icon"></div>
             </div>
             <div class="nav-block-left">
-              <a v-for="item in data.navLeft" :key="item.id" :href="item.slug" class="nav-link">{{ item.title }}</a>
+              <a v-for="item in data.navLeft" :key="item.id" :href="item.parent != null ? '/' + item.parent.slug + '/' + item.slug : '/' + item.slug" class="nav-link">{{ item.title }}</a>
             </div>
             <a href="/" aria-current="page" class="brand-menu w-nav-brand w--current">
               <img src="/images/favicon.png"  alt="">
@@ -33,20 +33,29 @@
 
 const { data } = await useGraphqlQuery({
   query: `query Page {
-        navLeft: allPages(orderBy: position_ASC, skip: 1, first: 3) {
+        navLeft: allPages(filter: {hideFromMenu: {eq: false}}, first: 3) {
           position
           title
           slug
+          parent {
+            slug
+          }
         }
-        navRight: allPages(filter: {slug: {neq: "contact"}}, orderBy: position_ASC, skip: 4, first: 3) {
+        navRight: allPages(filter: {hideFromMenu: {eq: false}}, skip: 3, first: 3) {
           position
           title
           slug
+          parent {
+            slug
+          }
         }
          contact: page(filter: {slug: {eq: "contact"}}) {
           position
           title
           slug
+          parent {
+            slug
+          }
         }
       }
   `,

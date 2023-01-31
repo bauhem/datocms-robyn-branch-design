@@ -24,7 +24,7 @@ const route = useRoute()
 
 const { data } = await useGraphqlQuery({
   query: `query Page($slug: String) {
-        page: allPages(filter: {slug: {eq: $slug}}, orderBy: position_ASC) {
+        page: page(filter: {slug: {eq: $slug}}, orderBy: position_ASC) {
           position
           title
           _seoMetaTags {
@@ -90,7 +90,7 @@ const { data } = await useGraphqlQuery({
 
 
 
-const components = data.value.page[0].content.blocks.map((item: { __typename: any })=> {
+const components = data.value.page.content.blocks.map((item: { __typename: any })=> {
   const {__typename, ...data} = item;
   // split the data and the component instance so you can v-bind the data easier in the template
   return {
@@ -110,6 +110,6 @@ useHead(() => {
   if (!data.value) {
     return {}
   }
-  return toHead(data.value?.page[0]?._seoMetaTags, data.value?.site?.favicon)
+  return toHead(data.value?.page?._seoMetaTags, data.value?.site?.favicon)
 })
 </script>

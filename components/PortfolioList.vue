@@ -44,7 +44,7 @@
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
                   <a
-                    :href="'/portfolio/' + item.slug"
+                    :href="'/portfolio/' + item.page.slug + '/' + item.slug"
                     class="hover-link w-inline-block"
                   >
                     <div>View</div>
@@ -78,6 +78,10 @@ const { data } = await useGraphqlQuery({
         project: allPortfolios(orderBy: position_ASC, skip: 1, first: 3) {
           position
           title
+          page {
+            id
+            slug
+          }
           slug
           id
         }

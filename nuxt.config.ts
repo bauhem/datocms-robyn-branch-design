@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   alias: {
       "@app": "/@app"
   },
+
   app: {
     head: {
       title: 'robin-branch-designs',

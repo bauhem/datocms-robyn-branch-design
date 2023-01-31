@@ -13,15 +13,18 @@
 </template>
 
 <script setup lang="ts">
-import {toHead, Image as DatocmsImage, StructuredText as DatocmsStructuredText,} from 'vue-datocms'
+import {
+  toHead,
+  Image as DatocmsImage,
+} from 'vue-datocms'
 
 import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
 const route = useRoute()
 
 const { data } = await useGraphqlQuery({
-  query: `query Page {
-        page: page(filter: {id: {eq: 19072913}}) {
+  query: `query Page($slug: String) {
+        page: page(filter: {slug: {eq: $slug}}, orderBy: position_ASC) {
           position
           title
           _seoMetaTags {
@@ -43,6 +46,11 @@ const { data } = await useGraphqlQuery({
                 id
                 title
               }
+              ... on HeroInteriorRecord {
+                id
+                title
+                subtitle
+              }
               ... on CtaBannerRecord {
                 id
                 title
@@ -57,7 +65,7 @@ const { data } = await useGraphqlQuery({
                 title
                 description
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, crop: faces, w: 1000, h: 1200}) {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
                     ...imageFields
                   }
                 }
@@ -70,33 +78,23 @@ const { data } = await useGraphqlQuery({
             ...seoMetaTagsFields
           }
         }
-        portfolio: allPortfolios(first: 10, orderBy: _firstPublishedAt_DESC) {
-          id
-          title
-          slug
-          publicationDate: _firstPublishedAt
-          excerpt
-          coverImage {
-            responsiveImage(imgixParams: {fit: crop, ar: "16:9", w: 860}) {
-              ...imageFields
-            }
-          }
-        }
       }
     
     ${imageFields}
     ${seoMetaTagsFields}
   `,
+  variables: {
+    slug: route.params.collectionSlug.toString(),
+  },
 })
 
-
-const components = data.value.page.content.blocks.map((item: { __typename: any })=> {
+const components = data.value?.page?.content.blocks.map((item: { __typename: any })=> {
   const {__typename, ...data} = item;
   // split the data and the component instance so you can v-bind the data easier in the template
   return {
     data: data,
+    component: defineAsyncComponent(() => import(`~/components/${__typename.replace("Record", "")}.vue`))
     // A note is that if you use path aliases for dynamic imports like @ or ~ you might experience issues.
-    component: defineAsyncComponent(() => import(`@/components/${__typename.replace("Record", "")}.vue`))
   }
 })
 

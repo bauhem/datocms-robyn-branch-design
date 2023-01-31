@@ -1,10 +1,10 @@
 <template>
-  <HeroProject :item="post" />
+  <HeroProject :item="page" />
   <section class="section whitesmoke wf-section">
     <div class="container">
       <ClientOnly>
         <datocms-structured-text
-          :data="post.content"
+          :data="page.content"
           :renderBlock="renderBlock"
         />
       </ClientOnly>
@@ -27,22 +27,47 @@ import Gallery from '@/components/Gallery.vue'
 
 const route = useRoute()
 
-const { data } = await useGraphqlQuery({
+const { data: collectionData }= await useGraphqlQuery({
   query: `
     query BlogPostQuery($slug: String!) {
+       portfolio(filter: {slug: {eq: $slug}}) {
+        id
+        slug
+        title
+        page {
+          id
+          title
+        }
+      }
+    }
+  `,
+  variables: {
+    slug: route.params.slug
+  },
+})
+console.log(collectionData)
+
+
+const { data } = await useGraphqlQuery({
+  query: `
+    query BlogPostQuery($slug: String!, $page: [ItemId]) {
       site: _site {
         favicon: faviconMetaTags {
           ...seoMetaTagsFields
         }
       }
 
-      portfolio(filter: { slug: { eq: $slug } }) {
+      portfolio(filter: {slug: {eq: $slug}, page: {in: $page}}) {
         seo: _seoMetaTags {
           ...seoMetaTagsFields
         }
         id
         title
         slug
+        page {
+          id
+          title
+        }
         publicationDate: _firstPublishedAt
         content {
           value
@@ -82,7 +107,8 @@ const { data } = await useGraphqlQuery({
     ${seoMetaTagsFields}
   `,
   variables: {
-    slug: route.params.id,
+    slug: route.params.slug,
+    page: collectionData.value.portfolio.page.id,
   },
 })
 
@@ -90,10 +116,10 @@ if (!data.value?.portfolio) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
 
-const post = computed(() => data.value?.portfolio)
+const page = computed(() => data.value?.portfolio)
 const site = computed(() => data.value?.site)
 
-useHead(() => toHead(post.value?.seo || {}, site.value?.favicon || {}))
+useHead(() => toHead(page.value?.seo || {}, site.value?.favicon || {}))
 
 const renderBlock = ({ record }) => {
   if (record.__typename === 'ImageBlockRecord') {
@@ -102,10 +128,5 @@ const renderBlock = ({ record }) => {
   if (record.__typename === 'GalleryRecord') {
     return h(Gallery, { props: { data: record } })
   }
-
-  return h('div', {}, [
-    h('p', {}, "Don't know how to render a block!"),
-    h('pre', {}, JSON.stringify(record, null, 2)),
-  ])
 }
 </script>
