@@ -46,7 +46,6 @@ const { data: collectionData }= await useGraphqlQuery({
     slug: route.params.slug
   },
 })
-console.log(collectionData)
 
 
 const { data } = await useGraphqlQuery({

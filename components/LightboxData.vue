@@ -1,7 +1,5 @@
 <template>
-  <script type="application/json" class="w-json">
     {{ data }}
-  </script>
 </template>
 
 <script>
