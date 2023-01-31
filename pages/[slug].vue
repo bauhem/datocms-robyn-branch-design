@@ -90,7 +90,7 @@ const { data } = await useGraphqlQuery({
 
 
 
-const components = data.value.page.content.blocks.map((item: { __typename: any })=> {
+const components = data.value?.page?.content.blocks.map((item: { __typename: any })=> {
   const {__typename, ...data} = item;
   // split the data and the component instance so you can v-bind the data easier in the template
   return {
