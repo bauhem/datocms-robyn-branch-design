@@ -2,11 +2,11 @@
   <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
     <div class="nav-container w-container">
       <div class="nav-menu-wrapper">
-        <a href="/" class="brand w-nav-brand"><img src="/images/logo.png"  height="25" alt=""></a>
+        <a href="/" class="brand w-nav-brand"><img src="/images/logo.webp"  height="25" alt=""></a>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="menu-wrap">
             <div class="tablet-menu">
-              <a href="/" class="brand-tablet w-nav-brand"><img src="/images/favicon.png"  alt=""><img src="/images/logo-small.png"  alt="" class="logo-text"></a>
+              <a href="/" class="brand-tablet w-nav-brand"><img src="/images/favicon.png"  alt=""><img src="/images/logo-small.webp"  alt="" class="logo-text"></a>
               <div class="close-menu-button w-nav-button"><img src="/images/close.png"  width="16" alt="" class="close-icon"></div>
             </div>
             <div class="nav-block-left">
@@ -14,7 +14,7 @@
             </div>
             <a href="/" aria-current="page" class="brand-menu w-nav-brand w--current">
               <img src="/images/favicon.png"  alt="">
-              <img src="/images/logo-middle.png"  alt="" class="logo-text"></a>
+              <img src="/images/logo-middle.webp"  alt="" class="logo-text"></a>
             <div class="nav-block-right">
              <a v-for="item in data.navRight" :key="item.id" :href="item.slug" class="nav-link">{{ item.title }}</a>
              <a :href="data.contact.slug" class="button in-navbar">{{ data.contact.title }}</a>
