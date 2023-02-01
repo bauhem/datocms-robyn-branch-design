@@ -30,7 +30,7 @@
               id="w-node-c4ea342e-90a5-6484-c82d-da42f0f3084b-cfcfa80c"
               data-w-id="c4ea342e-90a5-6484-c82d-da42f0f3084b"
               style="opacity: 0"
-              href="portfolio-listing.html"
+              href="/portfolio"
               class="button w-button"
               >View Portfolio</a
             >
