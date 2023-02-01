@@ -7,6 +7,7 @@
       :key="component"
       :is="component.component"
       v-bind:item="component.data"
+      v-bind:slug="route.path"
     />
 
   </div>

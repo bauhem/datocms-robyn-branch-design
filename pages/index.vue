@@ -7,6 +7,7 @@
       :key="component"
       :is="component.component"
       v-bind:item="component.data"
+      v-bind:route="route.path"
     />
 
   </div>
@@ -81,6 +82,7 @@ const { data } = await useGraphqlQuery({
           title
           slug
           publicationDate: _firstPublishedAt
+          featured
           excerpt
           coverImage {
             responsiveImage(imgixParams: {fit: crop, ar: "16:9", w: 860}) {

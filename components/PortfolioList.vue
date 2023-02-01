@@ -15,9 +15,9 @@
         data-w-id="da41aa5d-d32f-99d5-9549-716169a32794"
         class="projects-wrapper"
       >
-        <div class="projects-grid">
+        <div v-if="portfolio" class="projects-grid">
           <div
-            v-for="item in data.project"
+            v-for="item in portfolio.project"
             :key="item.id"
             data-w-id="8aaf55a3-d100-f831-0ec6-5d64de2c1cf3"
             class="project-item"
@@ -37,7 +37,7 @@
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
                   <a
-                    :href="'/portfolio/' + item.category + '/' + item.slug"
+                    :href=" item.category ? '/portfolio/' + item.category + '/' + item.slug : '/portfolio/' + item.slug"
                     class="hover-link w-inline-block"
                   >
                     <div>View</div>
@@ -67,32 +67,74 @@ export default {
 
 <script setup>
 import { Image, StructuredText } from 'vue-datocms'
+import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
+const route = useRoute()
 
-const { data } = await useGraphqlQuery({
-  query: `query Page {
-        project: allPortfolios(orderBy: position_ASC) {
-          position
-          title
-          category
-          coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1000, h: 1000, auto: format }) {
-              aspectRatio
-              base64
-              bgColor
-              height
-              sizes
-              src
-              srcSet
-              title
-              webpSrcSet
-              width
+let portfolio;
+  if (route.path === "/portfolio") {
+    const { data: portfolioData } = await useGraphqlQuery({
+      query: `query Page {
+          project: allPages(orderBy: position_ASC, filter: {parent: {eq: 108579675}}) {
+            position
+            title
+            coverImage {
+              responsiveImage(imgixParams: { fit: crop, auto: format, ar: "16:9", w: 860 }) {
+                ...imageFields
+              }
             }
+            slug
+            id
           }
-          slug
-          id
         }
-      }
-  `,
-})
+            ${imageFields}
+      `
+    })
+    portfolio = portfolioData;
+} else if (route.path === "/") {
+    const { data: portfolioData } = await useGraphqlQuery({
+      query: `query Page {
+          project: allPortfolios(orderBy: position_ASC, filter: {featured: {eq: true}}) {
+            position
+            title
+            category
+            featured
+            coverImage {
+              responsiveImage(imgixParams: { fit: crop, auto: format, ar: "16:9", w: 860 }) {
+                ...imageFields
+              }
+            }
+            slug
+            id
+          }
+        }
+            ${imageFields}
+      `
+    })
+    portfolio = portfolioData;
+} else {
+    const { data: portfolioData } = await useGraphqlQuery({
+      query: `query Page {
+          project: allPortfolios(orderBy: position_ASC, filter: {category: {eq: "${route.path.split("/")[2]}"}}) {
+            position
+            title
+            category
+            featured
+            coverImage {
+              responsiveImage(imgixParams: { fit: crop, auto: format, ar: "16:9", w: 860 }) {
+                ...imageFields
+              }
+            }
+            slug
+            id
+          }
+        }
+            ${imageFields}
+      `
+    })
+    portfolio = portfolioData;
+}
+
+
+
 </script>
