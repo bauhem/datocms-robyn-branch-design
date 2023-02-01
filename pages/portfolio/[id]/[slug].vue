@@ -17,8 +17,8 @@ import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
 import {
   toHead,
-  Image as DatocmsImage,
-  StructuredText as DatocmsStructuredText,
+  Image,
+  StructuredText,
 } from 'vue-datocms'
 import ImageBlock from '@/components/ImageBlock.vue'
 import Gallery from '@/components/Gallery.vue'
