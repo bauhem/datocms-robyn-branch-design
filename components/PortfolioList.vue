@@ -24,10 +24,7 @@
           >
             <div class="project-image-2">
               <div class="background-image">
-                
-                <Image
-                  :data="item.coverImage.responsiveImage"
-                />
+                <Image :data="item.coverImage.responsiveImage" />
               </div>
             </div>
             <div
@@ -37,7 +34,11 @@
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
                   <a
-                    :href=" item.category ? '/portfolio/' + item.category + '/' + item.slug : '/portfolio/' + item.slug"
+                    :href="
+                      item.category
+                        ? '/portfolio/' + item.category + '/' + item.slug
+                        : '/portfolio/' + item.slug
+                    "
                     class="hover-link w-inline-block"
                   >
                     <div>View</div>
@@ -71,10 +72,10 @@ import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
 const route = useRoute()
 
-let portfolio;
-  if (route.path === "/portfolio") {
-    const { data: portfolioData } = await useGraphqlQuery({
-      query: `query Page {
+let portfolio
+if (route.path === '/portfolio') {
+  const { data: portfolioData } = await useGraphqlQuery({
+    query: `query Page {
           project: allPages(orderBy: position_ASC, filter: {parent: {eq: 108579675}}) {
             position
             title
@@ -88,12 +89,12 @@ let portfolio;
           }
         }
             ${imageFields}
-      `
-    })
-    portfolio = portfolioData;
-} else if (route.path === "/") {
-    const { data: portfolioData } = await useGraphqlQuery({
-      query: `query Page {
+      `,
+  })
+  portfolio = portfolioData
+} else if (route.path === '/') {
+  const { data: featuredData } = await useGraphqlQuery({
+    query: `query Page {
           project: allPortfolios(orderBy: position_ASC, filter: {featured: {eq: true}}) {
             position
             title
@@ -109,13 +110,15 @@ let portfolio;
           }
         }
             ${imageFields}
-      `
-    })
-    portfolio = portfolioData;
+      `,
+  })
+  portfolio = featuredData
 } else {
-    const { data: portfolioData } = await useGraphqlQuery({
-      query: `query Page {
-          project: allPortfolios(orderBy: position_ASC, filter: {category: {eq: "${route.path.split("/")[2]}"}}) {
+  const { data: portfolioData } = await useGraphqlQuery({
+    query: `query Page {
+          project: allPortfolios(orderBy: position_ASC, filter: {category: {eq: "${
+            route.path.split('/')[2]
+          }"}}) {
             position
             title
             category
@@ -130,11 +133,8 @@ let portfolio;
           }
         }
             ${imageFields}
-      `
-    })
-    portfolio = portfolioData;
+      `,
+  })
+  portfolio = portfolioData
 }
-
-
-
 </script>
