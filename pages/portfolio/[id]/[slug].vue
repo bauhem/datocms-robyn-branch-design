@@ -2,12 +2,10 @@
   <ProjectsHeroProject :item="page" :back="collectionData.portfolio.page" />
   <section class="section whitesmoke wf-section">
     <div class="container">
-      <ClientOnly>
         <datocms-structured-text
           :data="page.content"
           :renderBlock="renderBlock"
         />
-      </ClientOnly>
     </div>
   </section>
 </template>

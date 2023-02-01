@@ -37,7 +37,7 @@
 export default {
   props: {
     item: Object,
-    back: String,
+    back: Object,
   },
 };
 </script>
