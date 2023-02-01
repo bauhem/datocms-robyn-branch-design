@@ -25,7 +25,7 @@
             <div class="project-image-2">
               <div class="background-image">
                 
-                <datocms-image
+                <Image
                   :data="item.coverImage.responsiveImage"
                 />
               </div>

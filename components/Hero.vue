@@ -77,7 +77,7 @@
           :key="item.id"
           class="w-slide"
         > 
-          <datocms-image
+          <Image
             :data="item.coverImage.responsiveImage"
             class="bg-slide-img"
           />

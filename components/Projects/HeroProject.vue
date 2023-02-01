@@ -25,7 +25,7 @@
           <p class="centered left">Photography by Zeke Ruelas</p>
         </div>
       </div>
-      <datocms-image
+      <Image
         :data="item.coverImage.responsiveImage"
         class="image-project-detail"
       />

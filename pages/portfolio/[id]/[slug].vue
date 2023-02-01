@@ -2,7 +2,7 @@
   <ProjectsHeroProject :item="page" :back="collectionData.portfolio.page" />
   <section class="section whitesmoke wf-section">
     <div class="container">
-        <datocms-structured-text
+        <StructuredText
           :data="page.content"
           :renderBlock="renderBlock"
         />

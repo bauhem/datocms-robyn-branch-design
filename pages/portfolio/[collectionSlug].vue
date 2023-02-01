@@ -13,11 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import HeroInterior from '~/components/HeroInterior.vue'
-import {
-  toHead,
-  Image as DatocmsImage,
-} from 'vue-datocms'
+import {toHead, Image as DatocmsImage, StructuredText as DatocmsStructuredText,} from 'vue-datocms'
+
 
 import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
