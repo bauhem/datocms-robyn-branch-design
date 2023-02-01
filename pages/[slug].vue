@@ -37,7 +37,7 @@ const { data } = await useGraphqlQuery({
               ... on HeroRecord {
                 id
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, auto: format, w: 2000, h: 1000}) {
                     ...imageFields
                   }
                 }
@@ -55,7 +55,7 @@ const { data } = await useGraphqlQuery({
                 id
                 title
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, auto: format, w: 2000, h: 1000}) {
                     ...imageFields
                   }
                 }
@@ -65,7 +65,7 @@ const { data } = await useGraphqlQuery({
                 title
                 description
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000}) {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, auto: format, w: 2000, h: 1000}) {
                     ...imageFields
                   }
                 }

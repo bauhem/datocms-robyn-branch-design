@@ -77,7 +77,7 @@ const { data } = await useGraphqlQuery({
               id
               image {
                 responsiveImage(
-                  imgixParams: { fm: jpg, fit: crop, w: 2000, h: 1000 }
+                  imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }
                 ) {
                   ...imageFields
                 }
@@ -87,7 +87,7 @@ const { data } = await useGraphqlQuery({
               id
               image {
                 responsiveImage(
-                  imgixParams: { fm: jpg, fit: crop, w: 2000, h: 1000 }
+                  imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }
                 ) {
                   ...imageFields
                 }
@@ -96,7 +96,7 @@ const { data } = await useGraphqlQuery({
           }
         }
         coverImage {
-          responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
+          responsiveImage(imgixParams: { fit: crop, auto: format, ar: "16:9", w: 860 }) {
             ...imageFields
           }
         }
