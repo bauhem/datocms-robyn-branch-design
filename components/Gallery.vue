@@ -16,17 +16,18 @@
             </div>
           </div>
         </div>
-        <img
-          :src="item.responsiveImage.src"
-          loading="eager"
-          v-img=""
-          sizes="(max-width: 479px) 100vw, (max-width: 991px) 45vw, 31vw"
-          :srcset="item.responsiveImage.srcSet"
-          alt=""
-          class="lightbox-img"
-        />
+        <datocms-image
+            :data="item.responsiveImage"
+            sizes="(max-width: 479px) 100vw, (max-width: 991px) 45vw, 31vw"
+            class="lightbox-img"
+          />
+
       </a>
     </div>
   </section>
 </template>
 
+<script setup>
+import { Image as DatocmsImage } from 'vue-datocms';
+
+</script>
