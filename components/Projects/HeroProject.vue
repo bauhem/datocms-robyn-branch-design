@@ -4,7 +4,7 @@
       <div class="black-overlay reverse"></div>
       <div class="container">
         <div class="hero-wrapper-content">
-          <a :href="'/portfolio/'+ back.slug" class="back-link w-inline-block"
+          <a :href="'/portfolio/'+ back" class="back-link w-inline-block"
             ><img
               src="/images/round-arrow-back_24dp-white.svg"
               loading="lazy"
@@ -37,7 +37,7 @@
 export default {
   props: {
     item: Object,
-    back: Object,
+    back: String,
   },
 };
 </script>

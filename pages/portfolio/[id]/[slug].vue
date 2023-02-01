@@ -32,11 +32,7 @@ const { data: collectionData }= await useGraphqlQuery({
         id
         slug
         title
-        page {
-          id
-          slug
-          title
-        }
+        category
       }
     }
   `,
@@ -48,24 +44,21 @@ const { data: collectionData }= await useGraphqlQuery({
 
 const { data } = await useGraphqlQuery({
   query: `
-    query BlogPostQuery($slug: String!, $page: [ItemId]) {
+    query BlogPostQuery($slug: String!, $page: String!) {
       site: _site {
         favicon: faviconMetaTags {
           ...seoMetaTagsFields
         }
       }
 
-      portfolio(filter: {slug: {eq: $slug}, page: {in: $page}}) {
+      portfolio(filter: {slug: {eq: $slug}, category: {eq: $page}}) {
         seo: _seoMetaTags {
           ...seoMetaTagsFields
         }
         id
         title
         slug
-        page {
-          id
-          title
-        }
+        category
         publicationDate: _firstPublishedAt
         content {
           value
@@ -106,7 +99,7 @@ const { data } = await useGraphqlQuery({
   `,
   variables: {
     slug: route.params.slug,
-    page: collectionData.value.portfolio.page.id,
+    page: collectionData.value.portfolio.category,
   },
 })
 

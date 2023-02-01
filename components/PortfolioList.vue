@@ -37,7 +37,7 @@
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
                   <a
-                    :href="'/portfolio/' + item.page.slug + '/' + item.slug"
+                    :href="'/portfolio/' + item.category + '/' + item.slug"
                     class="hover-link w-inline-block"
                   >
                     <div>View</div>
@@ -74,10 +74,7 @@ const { data } = await useGraphqlQuery({
         project: allPortfolios(orderBy: position_ASC) {
           position
           title
-          page {
-            id
-            slug
-          }
+          category
           coverImage {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1000, h: 1000, auto: format }) {
               aspectRatio
