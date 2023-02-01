@@ -24,7 +24,7 @@
           >
             <div class="project-image-2">
               <div class="background-image">
-                <Image :data="item.coverImage.responsiveImage" />
+                <Image :data="item.coverImage.responsiveImage" objectFit="cover" />
               </div>
             </div>
             <div

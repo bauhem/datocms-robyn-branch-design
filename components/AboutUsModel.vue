@@ -11,7 +11,7 @@
           <a href="/about-us" class="button w-button">Learn more</a>
         </div>
         <div class="div-wrapper">
-           <Image class="img-robyn" sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, 46vw" :data="item.image.responsiveImage" />
+           <Image class="img-robyn" sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, 46vw"  objectFit="cover" :data="item.image.responsiveImage" />
 
         </div>
       </div>

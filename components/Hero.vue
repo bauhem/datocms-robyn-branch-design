@@ -80,6 +80,7 @@
           <Image
             :data="item.coverImage.responsiveImage"
             class="bg-slide-img"
+            objectFit="cover"
           />
         </div>
       </div>

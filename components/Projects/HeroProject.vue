@@ -26,6 +26,7 @@
         </div>
       </div>
       <Image
+        objectFit="cover"
         :data="item.coverImage.responsiveImage"
         class="image-project-detail"
       />
