@@ -121,6 +121,13 @@ const site = computed(() => data.value?.site)
 
 useHead(() => toHead(page.value?.seo || {}, site.value?.favicon || {}))
 
+
+useHead({
+  htmlAttrs: {
+    'data-wf-page': '63befb04b81ae00acfcfa80c',
+  },
+})
+
 const renderBlock = ({ record }) => {
   if (record.__typename === 'ImageBlockRecord') {
     return h(ImageBlock, { props: { data: record.image } })
