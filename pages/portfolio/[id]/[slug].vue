@@ -77,7 +77,7 @@ const { data } = await useGraphqlQuery({
               image {
                 size
                 filename
-                small: responsiveImage(imgixParams: { fm: jpg, fit: crop, auto: format, w: 500, h: 400 }) {
+                small: responsiveImage(imgixParams: { fm: jpg, fit: fill, auto: format, w: 500 }) {
                   ...imageFields
                 }
                 big: responsiveImage(imgixParams: { fm: jpg, fit: fill, auto: format, w: 1400 }) {
@@ -116,7 +116,7 @@ useHead(() => toHead(page.value?.seo || {}, site.value?.favicon || {}))
 
 useHead({
   htmlAttrs: {
-    'data-wf-page': '63c027a38a08171e5315830b',
+    'data-wf-page': '63befb04b81ae00acfcfa80c',
   },
 })
 
