@@ -1157,7 +1157,7 @@ a {
   z-index: 1;
   display: block;
   max-width: 500px;
-  margin-top: auto;
+  margin-top: -64%;
   margin-bottom: auto;
   padding: 35px 46px;
   -webkit-flex-wrap: wrap;
@@ -2356,10 +2356,6 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-  .cta-heading {
-    font-size: 3rem;
-  }
-
   .button {
     margin-bottom: 20px;
   }
@@ -2412,13 +2408,19 @@ a {
   }
 
   .section {
-    padding: 60px 15px;
+    padding: 0px 15px;
+    background-image: none;
   }
 
   .projects-grid {
     grid-column-gap: 15px;
     grid-row-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(46%, 1fr));
+  }
+
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.1;
   }
 
   .hover-link-wrapper {
@@ -2452,6 +2454,16 @@ a {
 
   .brand-menu {
     padding-left: 0px;
+  }
+
+  .hero-wrapper-content {
+    position: relative;
+    max-width: none;
+    margin-top: 0%;
+  }
+
+  .back-link {
+    margin-left: -30px;
   }
 
   .rl_contact6_spacing-block-5 {
@@ -2532,6 +2544,11 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .projects-wrapper._3-columns {
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
@@ -2564,9 +2581,17 @@ a {
     padding-right: 0px;
   }
 
+  .hero-wrapper-content {
+    margin-top: 0%;
+  }
+
   .rl_content6_component {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+  }
+
+  .lightbox-overlay {
+    display: none;
   }
 }
 
