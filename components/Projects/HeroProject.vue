@@ -2,6 +2,11 @@
  <div class="section full-height wf-section">
     <div class="image-project-hero">
       <div class="black-overlay reverse"></div>
+      <Image
+        objectFit="cover"
+        :data="item.coverImage.responsiveImage"
+        class="image-project-detail"
+      />
       <div class="container">
         <div class="hero-wrapper-content">
           <a :href="'/portfolio/'+ back" class="back-link w-inline-block"
@@ -25,11 +30,7 @@
           <p class="centered left">Photography by Zeke Ruelas</p>
         </div>
       </div>
-      <Image
-        objectFit="cover"
-        :data="item.coverImage.responsiveImage"
-        class="image-project-detail"
-      />
+      
     </div>
   </div>
 </template>
