@@ -77,7 +77,10 @@ const { data } = await useGraphqlQuery({
               image {
                 size
                 filename
-                responsiveImage(imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }) {
+                small: responsiveImage(imgixParams: { fm: jpg, fit: crop, auto: format, w: 500, h: 400 }) {
+                  ...imageFields
+                }
+                big: responsiveImage(imgixParams: { fm: jpg, fit: fill, auto: format, w: 1400 }) {
                   ...imageFields
                 }
               }
