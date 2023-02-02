@@ -6,11 +6,11 @@
         class="projects-wrapper _3-columns"
       >
       <ClientOnly>
+        <template v-for="item in $attrs.props.data.image"
+        :key="item.id">
       <a
-        v-for="item in $attrs.props.data.image"
-        :key="item.id"
+        
         href="#"
-        aria-label="open lightbox" aria-haspopup="dialog"
         class="lightbox w-inline-block w-lightbox"
       >
         <div class="project-hover-link-wrapper detail">
@@ -25,6 +25,7 @@
           {{ scriptContents(item.responsiveImage.src) }}
         </component>
       </a>
+      </template>
       </ClientOnly>
     </div>
   </section>
