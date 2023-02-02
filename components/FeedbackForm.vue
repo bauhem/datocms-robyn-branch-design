@@ -7,11 +7,9 @@
       method="POST"
       :action="'/success'"
     >
-      <p class="hidden">
-        <label>
-          Don’t fill this out if you’re human: <input name="bot-field" />
-        </label>
-      </p>
+      <div v-html="`<label> Don’t fill this out if you’re human: <input name='bot-field' /> </label>`" class="hidden">
+        
+      </div>
       <input type="hidden" name="form-name" value="feedback" />
       <label for="name">Name</label>
       <input id="name" type="text" name="name" />

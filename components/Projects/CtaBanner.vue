@@ -9,7 +9,7 @@
         class="div-wrapper-third"
       >
         <div class="section-title">Test</div>
-        <a href="contact.html" class="button in-navbar w-button">Contact us</a>
+        <NuxtLink to="contact.html" class="button in-navbar w-button">Contact us</NuxtLink>
       </div>
     </div>
   </section>

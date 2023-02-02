@@ -33,8 +33,8 @@
             >
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
-                  <a
-                    :href="
+                  <NuxtLink
+                    :to="
                       item.category
                         ? '/portfolio/' + item.category + '/' + item.slug
                         : '/portfolio/' + item.slug
@@ -42,7 +42,7 @@
                     class="hover-link w-inline-block"
                   >
                     <div>View</div>
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
               <div class="project-info-top">

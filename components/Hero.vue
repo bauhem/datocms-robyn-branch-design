@@ -26,13 +26,13 @@
             >
               Let make your life better together.
             </p>
-            <a
+            <NuxtLink
               id="w-node-c4ea342e-90a5-6484-c82d-da42f0f3084b-cfcfa80c"
               data-w-id="c4ea342e-90a5-6484-c82d-da42f0f3084b"
               style="opacity: 0"
-              href="/portfolio"
+              to="/portfolio"
               class="button w-button"
-              >View Portfolio</a
+              >View Portfolio</NuxtLink
             >
             <p
               id="w-node-d1840ad3-bb2a-af03-b599-b9c65d3a4def-cfcfa80c"

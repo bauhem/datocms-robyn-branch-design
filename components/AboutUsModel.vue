@@ -8,7 +8,7 @@
         >
           <h3 class="section-title">{{ item.title }}</h3>
           <div v-html="item.description" class="p-light"></div>
-          <a href="/about-us" class="button w-button">Learn more</a>
+          <NuxtLink :to="'/about-us'" class="button w-button">Learn more</NuxtLink>
         </div>
         <div class="div-wrapper">
            <Image class="img-robyn" sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, 46vw"  objectFit="cover" :data="item.image.responsiveImage" />

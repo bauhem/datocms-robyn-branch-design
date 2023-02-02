@@ -9,7 +9,7 @@
       />
       <div class="container">
         <div class="hero-wrapper-content">
-          <a :href="'/portfolio/'+ back" class="back-link w-inline-block"
+          <NuxtLink :to="'/portfolio/'+ back" class="back-link w-inline-block"
             ><img
               src="/images/round-arrow-back_24dp-white.svg"
               loading="lazy"
@@ -17,7 +17,7 @@
               class="image-back-link"
             />
             <div>Back</div>
-          </a>
+          </NuxtLink>
           <h1
             data-w-id="f35a341d-90ed-58ef-e580-e02b6b104d1b"
             class="cta-heading"
