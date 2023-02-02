@@ -39,9 +39,11 @@ export default {
   mounted() {
     this.$nextTick(function () {
       $(document).ready(function () {
-        $('.w-nav-menu').on('click', 'a', function() {
-          $('.w-nav-button').triggerHandler('tap');
-        });
+        if (window.innerWidth <= 768) {
+          $('.w-nav-menu').on('click', 'a', function() {
+            $('.w-nav-button').triggerHandler('tap');
+          });
+        }
         // eslint-disable-next-line no-undef
         window.Webflow && window.Webflow.destroy();
         window.Webflow && window.Webflow.ready();
