@@ -16,12 +16,12 @@ export default {
         items: [
           {
             "_id": "example_img",
-            "origFileName": this.image.fileName,
-            "fileName": this.image.fileName,
-            "fileSize": this.image.fileSize,
-            "height": this.image.height,
-            "url": this.image.url,
-            "width": this.image.width,
+            "origFileName": 'this.image.title',
+            "fileName": 'this.image.title',
+            "fileSize": '419911',
+            "height": 'this.image.height',
+            "url": 'this.image.src',
+            "width": 'this.image.width',
             "type": "image"
           }
         ],

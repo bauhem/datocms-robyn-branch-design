@@ -67,19 +67,17 @@ const { data } = await useGraphqlQuery({
             ... on ImageBlockRecord {
               id
               image {
-                responsiveImage(
-                  imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }
-                ) {
-                  ...imageFields
-                }
+                responsiveImage(imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }) {
+                    ...imageFields
+                  }
               }
             }
             ... on GalleryRecord {
               id
               image {
-                responsiveImage(
-                  imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }
-                ) {
+                size
+                filename
+                responsiveImage(imgixParams: { fm: jpg, fit: crop, auto: format, w: 2000, h: 1000 }) {
                   ...imageFields
                 }
               }
@@ -115,7 +113,7 @@ useHead(() => toHead(page.value?.seo || {}, site.value?.favicon || {}))
 
 useHead({
   htmlAttrs: {
-    'data-wf-page': '63befb04b81ae00acfcfa80c',
+    'data-wf-page': '63c027a38a08171e5315830b',
   },
 })
 
