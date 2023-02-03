@@ -2,59 +2,7 @@
   <div class="home-hero-section wf-section">
     <div class="div-cta">
       <div class="container">
-        <div class="div-cta-block">
-          <div v-html="'Interior design studio in Florida &amp; South-Carolina<br />'"
-            data-w-id="1b80a246-7d79-0e6c-200c-5ff492e2b915"
-            style="opacity: 0"
-            class="cta-paragraph small"
-          >
-            
-          </div>
-          <div v-html="`<h1 style='opacity: 0' 
-            data-w-id='cc388a03-34d4-7c9f-6449-641aa299770b'
-            class='cta-heading home'>
-            We believe in the<br />power of design
-          </h1>`"
-          >
-          </div>
 
-          <div class="w-layout-grid grid">
-            <div v-html="'Let make your life better together.'"
-              id="w-node-_764c9d0f-554b-7c8f-0f8b-3661375b9217-cfcfa80c"
-              data-w-id="764c9d0f-554b-7c8f-0f8b-3661375b9217"
-              style="opacity: 0"
-              class="cta-paragraph"
-            >
-            </div>
-            <NuxtLink
-              id="w-node-c4ea342e-90a5-6484-c82d-da42f0f3084b-cfcfa80c"
-              data-w-id="c4ea342e-90a5-6484-c82d-da42f0f3084b"
-              style="opacity: 0"
-              to="/portfolio"
-              class="button w-button"
-              >View Portfolio</NuxtLink
-            >
-            <div v-html="`Robyn Branch Design is a premier design firm that specializes in
-              creating beautiful and functional spaces that reflect the personal
-              tastes and preferences of their clients.`"
-              id="w-node-d1840ad3-bb2a-af03-b599-b9c65d3a4def-cfcfa80c"
-              data-w-id="d1840ad3-bb2a-af03-b599-b9c65d3a4def"
-              style="opacity: 0"
-              class="cta-paragraph x-small"
-            >
-              
-            </div>
-            <div v-html="`We collaborate with the best people in the field to deliver
-              beautifully curated spaces to create a customized, original, and
-              beautiful sanctuary that functions well.`"
-              id="w-node-_2d65b743-435c-b4ec-4d79-aee1ea64c7a4-cfcfa80c"
-              data-w-id="2d65b743-435c-b4ec-4d79-aee1ea64c7a4"
-              style="opacity: 0"
-              class="cta-paragraph x-small"
-            >
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <Client-Only>
