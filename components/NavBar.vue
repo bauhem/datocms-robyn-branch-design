@@ -1,4 +1,5 @@
 <template>
+<ClientOnly>
   <div
     data-animation="over-left"
     data-collapse="medium"
@@ -76,6 +77,7 @@
       </div>
     </div>
   </div>
+  </ClientOnly>
 </template>
 
 <script>
