@@ -53,17 +53,6 @@ export default {
       currentImageIndex: 0,
     }
   },
-  mounted() {
-    this.$nextTick(function () {
-      $(document).ready(function () {
-        if (window.innerWidth <= 768) {
-          $('.w-nav-menu').on('click', 'a', function() {
-            $('.w-nav-button').triggerHandler('tap');
-          });
-        }
-      });
-    });
-  },
   methods: {
     showLightbox(item, index) {
       this.showLightboxImage = item.big.src
