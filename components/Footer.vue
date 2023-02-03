@@ -2,7 +2,8 @@
   <section class="footer wf-section">
     <div class="container">
       <NuxtLink to="/" class="brand-footer w-nav-brand"
-        ><img src="/images/favicon.png" alt="" loading="lazy"  /><img
+        ><img src="/images/favicon.png" alt="" loading="lazy" width="32px"
+          height="32px"  /><img
           src="/images/logo-small.webp"
           width="125px"
           height="18px"
