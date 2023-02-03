@@ -1,6 +1,5 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  ssr: true,
   alias: {
       "@app": "/@app"
   },
@@ -14,14 +13,8 @@ export default defineNuxtConfig({
     ['@nuxtjs/robots', {
       UserAgent: '*',
       Disallow: '/'
-    }],
-    'nuxt-delay-hydration',
+    }]
   ],
-  delayHydration: {
-    // enables nuxt-delay-hydration in dev mode for testing  
-    debug: process.env.NODE_ENV === 'development',
-    mode: 'mount',
-  },
   app: {
     head: {
       title: 'robin-branch-designs',

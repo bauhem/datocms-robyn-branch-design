@@ -605,7 +605,7 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/kit@3.1.2", "@nuxt/kit@^3.0.0", "@nuxt/kit@^3.1.1":
+"@nuxt/kit@3.1.2", "@nuxt/kit@^3.0.0":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.1.2.tgz#bf5f932b8a82f40bcfec4c1037021f0a75df4582"
   integrity sha512-m8/AF8hBJiG7aTx2CpiDGeLYYz30fUoPbJ9XiSmHqRIXv1goAFWHSkzWfRNEsoAAbMHf76oB917wVUQ3VSSQHg==
@@ -826,18 +826,6 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.0.tgz#5fb2e536c1ae9bf35366eed879e827fa59ca41c2"
   integrity sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==
-
-"@types/lodash.template@^4.5.1":
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/@types/lodash.template/-/lodash.template-4.5.1.tgz#3a2325e02963ca8aced4a657598ac26816340d83"
-  integrity sha512-0y71S2dGgmwdkSsyW95JBp8HSZchgKCsjr6F0lsT3eSMtaT3Nn9rcMHU1U4UKu6XjQT3YC6/PNwgFI7k9f+ltw==
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash@*":
-  version "4.14.191"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.191.tgz#09511e7f7cba275acd8b419ddac8da9a6a79e2fa"
-  integrity sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==
 
 "@types/resolve@1.20.2":
   version "1.20.2"
@@ -3033,17 +3021,6 @@ nuxi@3.1.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-delay-hydration@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/nuxt-delay-hydration/-/nuxt-delay-hydration-1.1.1.tgz#bc209d5f8767369666af66b46a457f28186628e3"
-  integrity sha512-rWqL2ZpVjvvUw/JaVXkd8bzp/QkNkrBlzkMYjHKFpciXLXtLzOoeJz/Ofq8Be/8ffQ8ldMZPcFBrIECjB9Hqmg==
-  dependencies:
-    "@nuxt/kit" "^3.1.1"
-    "@types/lodash.template" "^4.5.1"
-    lodash.template "^4.5.0"
-    packrup "^0.1.0"
-    radix3 "^1.0.0"
-
 nuxt@^3.1.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.1.2.tgz#74c8140b295e6fc8ada7921d7810f2cb25e16201"
@@ -3163,11 +3140,6 @@ os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==
-
-packrup@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/packrup/-/packrup-0.1.0.tgz#8a2d865a45aaee9807504046548678fa3382b6e3"
-  integrity sha512-HnUl9ztHGty5ZK13WM8Q7854SWPKH/eCT+MiTO0P1qCu1Y4S5PPJ8E9MwD3cnjSr7PUPzXDnmOVJIKM043OfJQ==
 
 parse-git-config@^3.0.0:
   version "3.0.0"
