@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       UserAgent: '*',
       Disallow: '/'
     }],
+    '@nuxt/image-edge',
     '@nuxtjs/critters'
   ],
   app: {
