@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     ['@nuxtjs/robots', {
       UserAgent: '*',
       Disallow: '/'
-    }]
+    }],
+    '@nuxtjs/critters'
   ],
   app: {
     layoutTransition: {
