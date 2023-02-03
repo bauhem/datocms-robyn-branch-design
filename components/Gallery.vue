@@ -18,6 +18,8 @@
             </div>
             <img
               :src="item.small.src"
+              :width="item.small.width"
+              :height="item.small.height"
               loading="eager"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 45vw, 31vw"
               alt=""
@@ -31,7 +33,9 @@
             <img
               class="lightbox-img"
               loading="eager"
-              :src="showLightboxImage"
+              :src="showLightboxImage.src"
+              :width="showLightboxImage.width"
+              :height="showLightboxImage.height"
             />
             <button class="close-button" @click="closeLightbox">Close</button>
             <button class="prev-button" @click="showPrevious()">
@@ -54,7 +58,7 @@ export default {
   },
   methods: {
     showLightbox(item, index) {
-      this.showLightboxImage = item.big.src
+      this.showLightboxImage = item.big
       this.currentImageIndex = index
     },
     closeLightbox() {
@@ -65,13 +69,13 @@ export default {
         (this.currentImageIndex - 1 + this.$attrs.props.data.image.length) %
         this.$attrs.props.data.image.length
       this.showLightboxImage =
-        this.$attrs.props.data.image[this.currentImageIndex].big.src
+        this.$attrs.props.data.image[this.currentImageIndex].big
     },
     showNext() {
       this.currentImageIndex =
         (this.currentImageIndex + 1) % this.$attrs.props.data.image.length
       this.showLightboxImage =
-        this.$attrs.props.data.image[this.currentImageIndex].big.src
+        this.$attrs.props.data.image[this.currentImageIndex].big
     },
   },
 }
