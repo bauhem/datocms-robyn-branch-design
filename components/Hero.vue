@@ -88,6 +88,7 @@
 </template>
 
 <script lang="ts">
+
 export default {
   props: {
     item: Object
