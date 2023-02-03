@@ -57,6 +57,7 @@
         </div>
       </div>
     </div>
+    <Client-Only>
     <div
       data-delay="4000"
       data-animation="cross"
@@ -84,6 +85,7 @@
         </div>
       </div>
     </div>
+    </Client-Only>
   </div>
 </template>
 
