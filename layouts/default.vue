@@ -1,4 +1,4 @@
-<template>
+<template v-bind:key="route.fullPath">
     <NavBar v-bind:navLeft="data.navLeft" v-bind:navRight="data.navRight" v-bind:contact="data.contact" />
     <slot />
     <Footer v-bind:navLeft="data.navLeft" v-bind:navRight="data.navRight" v-bind:contact="data.contact"/>
