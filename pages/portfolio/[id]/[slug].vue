@@ -100,7 +100,7 @@ const { data } = await useGraphqlQuery({
   `,
   variables: {
     slug: route.params.slug,
-    page: collectionData.value.portfolio.category,
+    page: collectionData.value?.portfolio.category,
   },
 })
 
