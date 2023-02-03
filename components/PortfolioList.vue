@@ -10,7 +10,7 @@
       </h2>`"></div>
       
       <div v-if="item.title" class="divider _w-logo">
-        <img src="/images/webclip.webp" alt="" class="rbd-icon" />
+        <img src="/images/webclip.webp" loading="lazy" alt="" class="rbd-icon" />
       </div>
       <div
         data-w-id="da41aa5d-d32f-99d5-9549-716169a32794"

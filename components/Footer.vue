@@ -5,6 +5,7 @@
         ><img src="/images/favicon.png" alt="" /><img
           src="/images/logo-small.webp"
           alt=""
+          loading="lazy"
           class="logo-text"
       /></NuxtLink>
       <div class="divider"></div>

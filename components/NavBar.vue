@@ -11,7 +11,7 @@
     <div class="nav-container w-container">
       <div class="nav-menu-wrapper">
         <NuxtLink to="/" class="brand w-nav-brand"
-          ><img src="/images/logo.webp" height="25" alt=""
+          ><img src="/images/logo.webp" loading="lazy" height="25" alt=""
         /></NuxtLink>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="menu-wrap">
@@ -49,8 +49,8 @@
               aria-current="page"
               class="brand-menu w-nav-brand w--current"
             >
-              <img src="/images/favicon.png" alt="" />
-              <img src="/images/logo-middle.webp" alt="" class="logo-text"
+              <img src="/images/favicon.png" loading="lazy" alt="" />
+              <img src="/images/logo-middle.webp" loading="lazy" alt="" class="logo-text"
             /></NuxtLink>
             <div class="nav-block-right">
               <NuxtLink
