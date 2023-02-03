@@ -1,13 +1,14 @@
 <template>
   <section class="section whitesmoke wf-section">
     <div class="container">
-      <h2 v-if="item.title"
-        data-w-id="79ed0ed5-cea0-fe65-bd42-916d1b739bbb"
-        style="opacity: 0"
-        class="section-title centered"
+      <div  v-if='item.title' v-html="`<h2
+        data-w-id='79ed0ed5-cea0-fe65-bd42-916d1b739bbb'
+        style='opacity: 0'
+        class='section-title centered'
       >
-        {{ item.title }}
-      </h2>
+        ${ item.title }
+      </h2>`"></div>
+      
       <div v-if="item.title" class="divider _w-logo">
         <img src="/images/webclip.webp" alt="" class="rbd-icon" />
       </div>
@@ -46,7 +47,8 @@
                 </div>
               </div>
               <div class="project-info-top">
-                <h3>{{ item.title }}</h3>
+                <div v-html='`<h3>${ item.title }</h3>`'></div>
+                
               </div>
             </div>
             <div class="image-overlay"></div>

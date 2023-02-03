@@ -1,5 +1,5 @@
 <template>
- <div class="section full-height wf-section">
+  <div class="section full-height wf-section">
     <div class="image-project-hero">
       <div class="black-overlay reverse"></div>
       <Image
@@ -9,7 +9,7 @@
       />
       <div class="container">
         <div class="hero-wrapper-content">
-          <NuxtLink :to="'/portfolio/'+ back" class="back-link w-inline-block"
+          <NuxtLink :to="'/portfolio/' + back" class="back-link w-inline-block"
             ><img
               src="/images/round-arrow-back_24dp-white.svg"
               loading="lazy"
@@ -18,19 +18,26 @@
             />
             <div>Back</div>
           </NuxtLink>
-          <h1
-            data-w-id="f35a341d-90ed-58ef-e580-e02b6b104d1b"
-            class="cta-heading"
+          <div
+            v-html="
+              `<h1
+            data-w-id=&quot;f35a341d-90ed-58ef-e580-e02b6b104d1b&quot;
+            class=&quot;cta-heading&quot;
           >
-            {{ item.title }}<br />
-          </h1>
+            ${ item.title }<br />
+          </h1>`
+            "
+          ></div>
+
           <div class="divider _w-logo left">
             <div class="losange"></div>
           </div>
-          <div v-html="'Photography by Zeke Ruelas'" class="centered left"></div>
+          <div
+            v-html="'Photography by Zeke Ruelas'"
+            class="centered left"
+          ></div>
         </div>
       </div>
-      
     </div>
   </div>
 </template>
@@ -41,9 +48,8 @@ export default {
     item: Object,
     back: String,
   },
-};
+}
 </script>
 <script setup>
 import { Image, StructuredText } from 'vue-datocms'
-
 </script>

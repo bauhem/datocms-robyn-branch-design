@@ -6,7 +6,7 @@
           data-w-id="237c0450-4288-973a-0b19-eee9c8f50bc6"
           class="div-wrapper"
         >
-          <h3 class="section-title">{{ item.title }}</h3>
+          <div v-html='`<h3 class="section-title">${ item.title }</h3>`'></div>
           <div v-html="item.description" class="p-light"></div>
           <NuxtLink :to="'/about-us'" class="button w-button">Learn more</NuxtLink>
         </div>

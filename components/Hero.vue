@@ -10,13 +10,14 @@
           >
             
           </div>
-          <h1
-            data-w-id="cc388a03-34d4-7c9f-6449-641aa299770b"
-            style="opacity: 0"
-            class="cta-heading home"
-          >
+          <div v-html="`<h1 style='opacity: 0' 
+            data-w-id='cc388a03-34d4-7c9f-6449-641aa299770b'
+            class='cta-heading home'>
             We believe in the<br />power of design
-          </h1>
+          </h1>`"
+          >
+          </div>
+
           <div class="w-layout-grid grid">
             <div v-html="'Let make your life better together.'"
               id="w-node-_764c9d0f-554b-7c8f-0f8b-3661375b9217-cfcfa80c"
