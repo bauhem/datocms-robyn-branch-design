@@ -4,6 +4,8 @@
       <NuxtLink to="/" class="brand-footer w-nav-brand"
         ><img src="/images/favicon.png" alt="" /><img
           src="/images/logo-small.webp"
+          width="125px"
+          height="18px"
           alt=""
           loading="lazy"
           class="logo-text"
@@ -72,6 +74,8 @@
                 ><img
                   src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124ac15112aad5_twitter%20small.svg"
                   alt=""
+                  width="24px"
+                height="24px"
               /></NuxtLink>
               <NuxtLink
                 :to="'https://www.linkedin.com/in/robyn-branch-a96a6351/'"
@@ -80,6 +84,8 @@
                 ><img
                   src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a389912aad8_linkedin%20small.svg"
                   alt=""
+                  width="24px"
+                height="24px"
               /></NuxtLink>
               <NuxtLink
                 :to="'https://www.facebook.com/robynbranchdesign/'"
@@ -88,6 +94,8 @@
                 ><img
                   src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a51bf12aae9_facebook%20small.svg"
                   alt=""
+                  width="24px"
+                height="24px"
               /></NuxtLink>
               <NuxtLink
                 :to="'https://www.instagram.com/robynbranchdesign/'"
@@ -96,6 +104,8 @@
                 ><img
                   src="https://uploads-ssl.webflow.com/63d3ed4bfd96a0f74ff9cf95/63d3ed4cfd96a08d2bf9cfc0_Instagram.svg"
                   alt=""
+                  width="22px"
+                height="22px"
                   class="sm-icon"
               /></NuxtLink>
               <NuxtLink
@@ -105,6 +115,8 @@
                 ><img
                   src="https://uploads-ssl.webflow.com/63d3ed4bfd96a0f74ff9cf95/63d3ed4cfd96a0b6bef9cfc4_Pinterest.svg"
                   alt=""
+                  width="22px"
+                height="22px"
                   class="sm-icon"
               /></NuxtLink>
             </div>
