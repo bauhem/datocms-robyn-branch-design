@@ -1,5 +1,4 @@
 <template>
-  <section class="section whitesmoke wf-section">
     <div
        data-w-id="79ed0ed5-cea0-fe65-bd42-916d1b739bb9" style="opacity:0" class="projects-wrapper _3-columns">
     
@@ -44,7 +43,6 @@
         </div>
       </transition>
     </div>
-  </section>
 </template>
 
 <script>

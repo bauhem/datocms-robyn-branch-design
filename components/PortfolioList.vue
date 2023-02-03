@@ -1,14 +1,14 @@
 <template>
   <section class="section whitesmoke wf-section">
     <div class="container">
-      <h2
+      <h2 v-if="item.title"
         data-w-id="79ed0ed5-cea0-fe65-bd42-916d1b739bbb"
         style="opacity: 0"
         class="section-title centered"
       >
         {{ item.title }}
       </h2>
-      <div class="divider _w-logo">
+      <div v-if="item.title" class="divider _w-logo">
         <img src="/images/webclip.webp" alt="" class="rbd-icon" />
       </div>
       <div
