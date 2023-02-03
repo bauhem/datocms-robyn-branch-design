@@ -54,9 +54,9 @@
               aria-current="page"
               class="brand-menu w-nav-brand w--current"
             >
-              <nuxt-img format="png" src="/images/favicon.png" width="32px"
+              <nuxt-img format="png" src="/favicon.png" width="32px"
           height="32px" loading="lazy" alt="" />
-              <nuxt-img format="webp" src="/images/logo-middle.webp"  width="200px"
+              <nuxt-img format="webp" src="/logo-middle.webp"  width="200px"
           height="29px" loading="lazy" alt="" class="logo-text"
             /></NuxtLink>
             <div class="nav-block-right">
