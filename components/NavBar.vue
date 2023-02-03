@@ -12,7 +12,7 @@
       <div class="nav-menu-wrapper">
         <NuxtLink to="/" class="brand w-nav-brand"
           ><img
-            src="/images/logo.webp"
+            src="https://robyn-branch-designs.netlify.app/images/logo.webp"
             loading="lazy"
             width="175px"
             height="25px"
@@ -24,11 +24,11 @@
               <NuxtLink to="/" class="brand-tablet w-nav-brand"
                 ><img
                   loading="lazy"
-                  src="/images/favicon.png"
+                  src="https://robyn-branch-designs.netlify.app/images/favicon.png"
                   alt=""
                   width="32px"
                   height="32px" /><img
-                  src="/images/logo-small.webp"
+                  src="https://robyn-branch-designs.netlify.app/images/logo-small.webp"
                   alt=""
                   loading="lazy"
                   width="200px"
@@ -38,7 +38,7 @@
               <div class="close-menu-button w-nav-button">
                 <img
                   loading="lazy"
-                  src="/images/close.png"
+                  src="https://robyn-branch-designs.netlify.app/images/close.png"
                   width="16"
                   alt=""
                   class="close-icon"
