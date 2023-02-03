@@ -11,25 +11,33 @@
     <div class="nav-container w-container">
       <div class="nav-menu-wrapper">
         <NuxtLink to="/" class="brand w-nav-brand"
-          ><img src="/images/logo.webp" loading="lazy" width="175px"
-                  height="25px"  alt=""
+          ><img
+            src="/images/logo.webp"
+            loading="lazy"
+            width="175px"
+            height="25px"
+            alt=""
         /></NuxtLink>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="menu-wrap">
             <div class="tablet-menu">
               <NuxtLink to="/" class="brand-tablet w-nav-brand"
-                ><img loading="lazy" src="/images/favicon.png" alt="" width="32px"
-          height="32px" /><img
+                ><img
+                  loading="lazy"
+                  src="/images/favicon.png"
+                  alt=""
+                  width="32px"
+                  height="32px" /><img
                   src="/images/logo-small.webp"
                   alt=""
-                  loading="lazy" 
+                  loading="lazy"
                   width="200px"
                   height="29px"
                   class="logo-text"
               /></NuxtLink>
               <div class="close-menu-button w-nav-button">
                 <img
-                  loading="lazy" 
+                  loading="lazy"
                   src="/images/close.png"
                   width="16"
                   alt=""
@@ -55,10 +63,19 @@
               aria-current="page"
               class="brand-menu w-nav-brand w--current"
             >
-              <nuxt-img loading="lazy"  src="https://robyn-branch-designs.netlify.app/images/favicon.png" width="32px"
-          height="32px"  alt="" />
-              <nuxt-img loading="lazy"  src="https://robyn-branch-designs.netlify.app/images/logo-middle.webp"  width="200px"
-          height="29px" alt="" class="logo-text"
+              <nuxt-img
+                loading="lazy"
+                src="https://robyn-branch-designs.netlify.app/images/favicon.png"
+                width="32px"
+                height="32px"
+                alt="" />
+              <nuxt-img
+                loading="lazy"
+                src="https://robyn-branch-designs.netlify.app/images/logo-middle.webp"
+                width="200px"
+                height="29px"
+                alt=""
+                class="logo-text"
             /></NuxtLink>
             <div class="nav-block-right">
               <NuxtLink
