@@ -2433,7 +2433,6 @@ a {
 
   .section {
     padding-right: 15px;
-    padding-bottom: 0px;
     padding-left: 15px;
     background-image: none;
   }
@@ -2579,6 +2578,12 @@ a {
     -ms-flex-align: start;
     align-items: flex-start;
     text-align: left;
+  }
+
+  .section.header {
+    padding-top: 90px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   .projects-wrapper {
