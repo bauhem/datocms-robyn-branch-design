@@ -1,5 +1,5 @@
 <template >
-    <div v-bind:key="route.fullPath">
+    <div v-bind:key="route.fullPath" >
     <NavBar v-bind:navLeft="data.navLeft" v-bind:navRight="data.navRight" v-bind:contact="data.contact" />
         <div style="min-height:100vh">
 
@@ -12,12 +12,15 @@
 <style>
 .layout-enter-active,
 .layout-leave-active {
-  transition: all 0.4s;
+  transition: all 1s;
 }
 .layout-enter-from,
 .layout-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+body  {
+  background-color: black;
 }
 </style>
 
