@@ -27,7 +27,7 @@
           <div class="divider _w-logo left">
             <div class="losange"></div>
           </div>
-          <p class="centered left">Photography by Zeke Ruelas</p>
+          <div v-html="'Photography by Zeke Ruelas'" class="centered left"></div>
         </div>
       </div>
       

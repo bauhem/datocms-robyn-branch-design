@@ -5,7 +5,7 @@
       <div data-w-id="3a40679e-cd93-e10d-3b64-21ac28294dd9" class="divider _w-logo">
         <div class="losange"></div>
       </div>
-      <p data-w-id="3a40679e-cd93-e10d-3b64-21ac28294ddb" class="centered light">{{ item.subtitle }}</p>
+      <div v-html="item.subtitle" data-w-id="3a40679e-cd93-e10d-3b64-21ac28294ddb" class="centered light"></div>
     </div>
   </div>
 </template>
