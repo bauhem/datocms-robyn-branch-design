@@ -2,11 +2,7 @@
   <div class="section full-height wf-section">
     <div class="image-project-hero">
       <div class="black-overlay reverse"></div>
-      <Image
-        objectFit="cover"
-        :data="item.coverImage.responsiveImage"
-        class="image-project-detail"
-      />
+      
       <div class="container">
         <div class="hero-wrapper-content">
           <NuxtLink :to="'/portfolio/' + back" class="back-link w-inline-block"
@@ -38,6 +34,11 @@
           ></div>
         </div>
       </div>
+      <Image
+        objectFit="cover"
+        :data="item.coverImage.responsiveImage"
+        class="image-project-detail"
+      />
     </div>
   </div>
 </template>
@@ -47,17 +48,6 @@ export default {
   props: {
     item: Object,
     back: String,
-  },
-  mounted() {
-    this.$nextTick(function () {
-      $(document).ready(function () {
-        // eslint-disable-next-line no-undef
-        window.Webflow && window.Webflow.destroy();
-        window.Webflow && window.Webflow.ready();
-        window.Webflow && window.Webflow.require("ix2").init();
-        document.dispatchEvent(new Event("readystatechange"));
-      });
-    });
   }
 }
 </script>

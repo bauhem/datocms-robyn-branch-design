@@ -16,6 +16,10 @@ export default defineNuxtConfig({
     }]
   ],
   app: {
+    layoutTransition: {
+      name: 'layout',
+      mode: 'out-in' // default
+    },
     head: {
       title: 'robin-branch-designs',
       htmlAttrs: {

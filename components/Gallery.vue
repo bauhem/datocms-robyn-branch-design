@@ -1,6 +1,6 @@
 <template>
     <div
-       data-w-id="79ed0ed5-cea0-fe65-bd42-916d1b739bb9" style="opacity:0" class="projects-wrapper _3-columns">
+       data-w-id="e509c809-2043-10b9-588e-993b5b846794" style="opacity:0" class="projects-wrapper-column _3-columns">
     
       <template v-for="(item, index) in $attrs.props.data.image" :key="item.id">
           <NuxtLink

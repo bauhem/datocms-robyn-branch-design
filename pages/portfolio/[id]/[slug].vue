@@ -53,7 +53,9 @@ const { data } = await useGraphqlQuery({
 
       portfolio(filter: {slug: {eq: $slug}, category: {eq: $page}}) {
         seo: _seoMetaTags {
-          ...seoMetaTagsFields
+          attributes
+          content
+          tag
         }
         id
         title
@@ -111,12 +113,12 @@ if (!data.value?.portfolio) {
 const page = computed(() => data.value?.portfolio)
 const site = computed(() => data.value?.site)
 
-useHead(() => toHead(page.value?.portfolio.seo || {}, site.value?.favicon || {}))
+useHead(() => toHead(data.value?.portfolio?.seo || {}, site.value?.favicon || {}))
 
 
 useHead({
   htmlAttrs: {
-    'data-wf-page': '63c027a38a08171e5315830b',
+    'data-wf-page': '63befb04b81ae00acfcfa80c',
   },
 })
 
@@ -128,4 +130,20 @@ const renderBlock = ({ record }) => {
     return h(Gallery, { props: { data: record } })
   }
 }
+</script>
+
+<script lang="ts">
+export default {
+   mounted() {
+    this.$nextTick(function () {
+      $(document).ready(function () {
+        // eslint-disable-next-line no-undef
+        window.Webflow && window.Webflow.destroy();
+        window.Webflow && window.Webflow.ready();
+        window.Webflow && window.Webflow.require("ix2").init();
+        document.dispatchEvent(new Event("readystatechange"));
+      });
+    });
+  }
+};
 </script>

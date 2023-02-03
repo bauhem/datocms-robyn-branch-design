@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="min-height:100vh">
 
     <component
       v-for="component in components"
@@ -120,4 +120,20 @@ useHead(() => {
   }
   return toHead(data.value?.page?._seoMetaTags, data.value?.site?.favicon)
 })
+</script>
+
+<script lang="ts">
+export default {
+   mounted() {
+    this.$nextTick(function () {
+      $(document).ready(function () {
+        // eslint-disable-next-line no-undef
+        window.Webflow && window.Webflow.destroy();
+        window.Webflow && window.Webflow.ready();
+        window.Webflow && window.Webflow.require("ix2").init();
+        document.dispatchEvent(new Event("readystatechange"));
+      });
+    });
+  }
+};
 </script>
