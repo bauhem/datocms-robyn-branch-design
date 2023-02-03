@@ -42,7 +42,7 @@
   </div>
 </template>
 
-<script>
+<script  lang="ts">
 export default {
   props: {
     item: Object,
@@ -50,6 +50,7 @@ export default {
   },
 }
 </script>
-<script setup>
-import { Image, StructuredText } from 'vue-datocms'
+<script setup lang="ts">
+import { Image } from 'vue-datocms'
+
 </script>

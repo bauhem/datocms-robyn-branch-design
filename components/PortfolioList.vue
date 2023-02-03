@@ -69,8 +69,8 @@ export default {
 </script>
 
 <script setup>
-import { Image, StructuredText } from 'vue-datocms'
-import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
+import { Image } from 'vue-datocms'
+import { imageFields } from '~~/utils/graphql'
 
 const route = useRoute()
 
