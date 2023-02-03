@@ -1,6 +1,6 @@
 <template>
 
- <img
+ <nuxt-img
           :src="$attrs.props.data.responsiveImage.src"
           loading="eager"
           v-img=""

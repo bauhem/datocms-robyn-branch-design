@@ -28,7 +28,7 @@
                   class="logo-text"
               /></NuxtLink>
               <div class="close-menu-button w-nav-button">
-                <img
+                <nuxt-img
                   src="/images/close.png"
                   width="16"
                   alt=""

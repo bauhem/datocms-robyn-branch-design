@@ -2,7 +2,7 @@
   <section class="footer wf-section">
     <div class="container">
       <NuxtLink to="/" class="brand-footer w-nav-brand"
-        ><nuxt-img src="/images/favicon.png" alt="" /><img
+        ><nuxt-img src="/images/favicon.png" alt="" /><nuxt-img
           src="/images/logo-small.webp"
           width="125px"
           height="18px"
@@ -71,7 +71,7 @@
                 :to="'https://twitter.com/robyn_branch'"
                 target="_blank"
                 class="footer-social-link w-inline-block"
-                ><img
+                ><nuxt-img
                   src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124ac15112aad5_twitter%20small.svg"
                   alt=""
                   width="24px"
@@ -81,7 +81,7 @@
                 :to="'https://www.linkedin.com/in/robyn-branch-a96a6351/'"
                 target="_blank"
                 class="footer-social-link w-inline-block"
-                ><img
+                ><nuxt-img
                   src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a389912aad8_linkedin%20small.svg"
                   alt=""
                   width="24px"
@@ -91,7 +91,7 @@
                 :to="'https://www.facebook.com/robynbranchdesign/'"
                 target="_blank"
                 class="footer-social-link w-inline-block"
-                ><img
+                ><nuxt-img
                   src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a51bf12aae9_facebook%20small.svg"
                   alt=""
                   width="24px"
@@ -101,7 +101,7 @@
                 :to="'https://www.instagram.com/robynbranchdesign/'"
                 target="_blank"
                 class="footer-social-link w-inline-block"
-                ><img
+                ><nuxt-img
                   src="https://uploads-ssl.webflow.com/63d3ed4bfd96a0f74ff9cf95/63d3ed4cfd96a08d2bf9cfc0_Instagram.svg"
                   alt=""
                   width="22px"
@@ -112,7 +112,7 @@
                 :to="'https://www.pinterest.com/robyn_branch_design/'"
                 target="_blank"
                 class="footer-social-link w-inline-block"
-                ><img
+                ><nuxt-img
                   src="https://uploads-ssl.webflow.com/63d3ed4bfd96a0f74ff9cf95/63d3ed4cfd96a0b6bef9cfc4_Pinterest.svg"
                   alt=""
                   width="22px"
