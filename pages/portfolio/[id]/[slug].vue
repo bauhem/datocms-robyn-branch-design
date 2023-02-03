@@ -116,7 +116,7 @@ useHead(() => toHead(page.value?.seo || {}, site.value?.favicon || {}))
 
 useHead({
   htmlAttrs: {
-    'data-wf-page': '63befb04b81ae00acfcfa80c',
+    'data-wf-page': '63c027a38a08171e5315830b',
   },
 })
 
