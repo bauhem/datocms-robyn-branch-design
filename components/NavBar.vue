@@ -55,9 +55,9 @@
               aria-current="page"
               class="brand-menu w-nav-brand w--current"
             >
-              <nuxt-img loading="lazy"  src="/images/favicon.png" width="32px"
+              <nuxt-img loading="lazy"  src="https://robyn-branch-designs.netlify.app/images/favicon.png" width="32px"
           height="32px"  alt="" />
-              <nuxt-img loading="lazy"  src="/images/logo-middle.webp"  width="200px"
+              <nuxt-img loading="lazy"  src="https://robyn-branch-designs.netlify.app/images/logo-middle.webp"  width="200px"
           height="29px" alt="" class="logo-text"
             /></NuxtLink>
             <div class="nav-block-right">

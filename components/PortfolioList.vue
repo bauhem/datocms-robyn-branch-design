@@ -10,7 +10,7 @@
       </h2>`"></div>
       
       <div v-if="item.title" class="divider _w-logo">
-        <nuxt-img src="/images/webclip.webp" loading="lazy" alt="" width="64px"
+        <nuxt-img src="https://robyn-branch-designs.netlify.app/images/webclip.webp" loading="lazy" alt="" width="64px"
           height="62px" class="rbd-icon" />
       </div>
       <div
