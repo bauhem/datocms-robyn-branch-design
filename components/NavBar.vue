@@ -11,16 +11,18 @@
     <div class="nav-container w-container">
       <div class="nav-menu-wrapper">
         <NuxtLink to="/" class="brand w-nav-brand"
-          ><img src="/images/logo.webp" loading="lazy" height="25"  alt=""
+          ><img src="/images/logo.webp" loading="lazy" width="175px"
+                  height="25px"  alt=""
         /></NuxtLink>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="menu-wrap">
             <div class="tablet-menu">
               <NuxtLink to="/" class="brand-tablet w-nav-brand"
-                ><img src="/images/favicon.png" alt="" /><img
+                ><img src="/images/favicon.png" alt="" width="32px"
+          height="32px" /><img
                   src="/images/logo-small.webp"
                   alt=""
-                   width="200px"
+                  width="200px"
                   height="29px"
                   class="logo-text"
               /></NuxtLink>
