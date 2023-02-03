@@ -6,7 +6,7 @@
       <template v-for="(item, index) in $attrs.props.data.image" :key="item.id">
           <NuxtLink
             @click="showLightbox(item, index)"
-            :to="'#'"
+            to=""
             id="w-node-e7a9b3cf-ee28-210b-d0e0-b27e92c4350c-92c4350c"
             class="lightbox w-inline-block w-lightbox"
           >
