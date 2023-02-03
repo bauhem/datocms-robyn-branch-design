@@ -1,5 +1,4 @@
 <template>
-<ClientOnly>
   <div
     data-animation="over-left"
     data-collapse="medium"
@@ -32,19 +31,7 @@
                 />
               </div>
             </div>
-            <div class="nav-block-left">
-              <NuxtLink
-                v-for="item in navLeft"
-                :key="item.id"
-                :to="
-                  item.parent != null
-                    ? '/' + item.parent.slug + '/' + item.slug
-                    : '/' + item.slug
-                "
-                class="nav-link"
-                >{{ item.title }}</NuxtLink
-              >
-            </div>
+
             <NuxtLink
               to="/"
               aria-current="page"
@@ -53,22 +40,7 @@
               <img src="/images/favicon.png" alt="" />
               <img src="/images/logo-middle.webp" alt="" class="logo-text"
             /></NuxtLink>
-            <div class="nav-block-right">
-              <NuxtLink
-                v-for="item in navRight"
-                :key="item.id"
-                :to="
-                  item.parent != null
-                    ? '/' + item.parent.slug + '/' + item.slug
-                    : '/' + item.slug
-                "
-                class="nav-link"
-                >{{ item.title }}</NuxtLink
-              >
-              <NuxtLink :to="contact.slug" class="button in-navbar">{{
-                contact.title
-              }}</NuxtLink>
-            </div>
+
           </div>
         </nav>
         <div class="menu-button w-nav-button">
@@ -77,7 +49,6 @@
       </div>
     </div>
   </div>
-  </ClientOnly>
 </template>
 
 <script>
