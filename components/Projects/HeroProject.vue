@@ -50,6 +50,8 @@ export default {
   },
 }
 </script>
+
+
 <script setup lang="ts">
 import { Image } from 'vue-datocms'
 
