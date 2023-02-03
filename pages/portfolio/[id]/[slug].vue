@@ -111,7 +111,7 @@ if (!data.value?.portfolio) {
 const page = computed(() => data.value?.portfolio)
 const site = computed(() => data.value?.site)
 
-useHead(() => toHead(page.value?.seo || {}, site.value?.favicon || {}))
+useHead(() => toHead(page.value?.portfolio.seo || {}, site.value?.favicon || {}))
 
 
 useHead({
