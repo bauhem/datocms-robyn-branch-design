@@ -1,5 +1,6 @@
 <template>
     <NavBar v-bind:navLeft="data.navLeft" v-bind:navRight="data.navRight" v-bind:contact="data.contact" />
+    <slot />
 </template>
 
 
