@@ -11,24 +11,25 @@
     <div class="nav-container w-container">
       <div class="nav-menu-wrapper">
         <NuxtLink to="/" class="brand w-nav-brand"
-          ><nuxt-img  src="/images/logo.webp" loading="lazy" width="175px"
+          ><img src="/images/logo.webp" loading="lazy" width="175px"
                   height="25px"  alt=""
         /></NuxtLink>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="menu-wrap">
             <div class="tablet-menu">
               <NuxtLink to="/" class="brand-tablet w-nav-brand"
-                ><nuxt-img src="/images/favicon.png" alt="" width="32px"
-          height="32px" />
-              <nuxt-img
+                ><img loading="lazy" src="/images/favicon.png" alt="" width="32px"
+          height="32px" /><img
                   src="/images/logo-small.webp"
                   alt=""
+                  loading="lazy" 
                   width="200px"
                   height="29px"
                   class="logo-text"
               /></NuxtLink>
               <div class="close-menu-button w-nav-button">
-                <nuxt-img
+                <img
+                  loading="lazy" 
                   src="/images/close.png"
                   width="16"
                   alt=""
@@ -54,10 +55,10 @@
               aria-current="page"
               class="brand-menu w-nav-brand w--current"
             >
-              <nuxt-img format="png" src="/favicon.png" width="32px"
-          height="32px" loading="lazy" alt="" />
-              <nuxt-img format="webp" src="/logo-middle.webp"  width="200px"
-          height="29px" loading="lazy" alt="" class="logo-text"
+              <img loading="lazy"  src="/images/favicon.png" width="32px"
+          height="32px"  alt="" />
+              <img loading="lazy"  src="/images/logo-middle.webp"  width="200px"
+          height="29px" alt="" class="logo-text"
             /></NuxtLink>
             <div class="nav-block-right">
               <NuxtLink
