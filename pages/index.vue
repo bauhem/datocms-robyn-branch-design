@@ -39,8 +39,13 @@ const { data } = await useGraphqlQuery({
                   title
                   slug
                   excerpt
-                  coverImage {
+                  big: coverImage {
                     responsiveImage(imgixParams: {fit: crop, ar: "16:9", auto:format, w: 1905, h: 980}) {
+                      ...imageFields
+                    }
+                  }
+                  small: coverImage {
+                    responsiveImage(imgixParams: {fit: crop, ar: "9:16", auto:format, w: 500, h: 900}) {
                       ...imageFields
                     }
                   }

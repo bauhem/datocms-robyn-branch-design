@@ -69,7 +69,7 @@
           class="w-slide"
         > 
           <Image
-            :data="item.coverImage.responsiveImage"
+            :data="$device.isMobile ? item.small.responsiveImage : item.big.responsiveImage"
             class="bg-slide-img"
             objectFit="cover"
           />
@@ -80,7 +80,6 @@
 </template>
 
 <script lang="ts">
-
 export default {
   props: {
     item: Object

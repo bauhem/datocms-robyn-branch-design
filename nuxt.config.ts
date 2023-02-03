@@ -15,7 +15,8 @@ export default defineNuxtConfig({
       Disallow: '/'
     }],
     '@nuxt/image-edge',
-    '@nuxtjs/critters'
+    '@nuxtjs/critters',
+    '@nuxtjs/device'
   ],
   app: {
     layoutTransition: {
