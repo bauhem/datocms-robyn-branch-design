@@ -25,7 +25,7 @@
             <NuxtLink
               id="w-node-c4ea342e-90a5-6484-c82d-da42f0f3084b-cfcfa80c"
                data-w-id="c4ea342e-90a5-6484-c82d-da42f0f3084b"
-              to="/portfolio"
+              to="/portfolios"
               class="button w-button"
               >View Portfolio</NuxtLink
             >
