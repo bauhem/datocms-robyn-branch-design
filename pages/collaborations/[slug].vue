@@ -1,5 +1,5 @@
 <template>
-  <ProjectsHeroProject :item="page" :back="collectionData.portfolio.category" />
+  <ProjectsHeroProject :item="page" :back="'/collaborations'" />
   <section class="section whitesmoke wf-section">
     <div class="container">
         <StructuredText
@@ -25,33 +25,17 @@ import Gallery from '@/components/Gallery.vue'
 
 const route = useRoute()
 
-const { data: collectionData }= await useGraphqlQuery({
-  query: `
-    query BlogPostQuery($slug: String!) {
-       portfolio(filter: {slug: {eq: $slug}}) {
-        id
-        slug
-        title
-        category
-      }
-    }
-  `,
-  variables: {
-    slug: route.params.slug
-  },
-})
-
 
 const { data } = await useGraphqlQuery({
   query: `
-    query BlogPostQuery($slug: String!, $page: String!) {
+    query BlogPostQuery($slug: String!) {
       site: _site {
         favicon: faviconMetaTags {
           ...seoMetaTagsFields
         }
       }
 
-      portfolio(filter: {slug: {eq: $slug}, category: {eq: $page}}) {
+      collaboration(filter: {slug: {eq: $slug}}) {
         seo: _seoMetaTags {
           attributes
           content
@@ -60,7 +44,6 @@ const { data } = await useGraphqlQuery({
         id
         title
         slug
-        category
         publicationDate: _firstPublishedAt
         content {
           value
@@ -102,18 +85,17 @@ const { data } = await useGraphqlQuery({
   `,
   variables: {
     slug: route.params.slug,
-    page: collectionData.value?.portfolio?.category,
   },
 })
 
-if (!data.value?.portfolio) {
+if (!data.value?.collaboration) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
 
-const page = computed(() => data.value?.portfolio)
+const page = computed(() => data.value?.collaboration)
 const site = computed(() => data.value?.site)
 
-useHead(() => toHead(data.value?.portfolio?.seo || {}, site.value?.favicon || {}))
+useHead(() => toHead(data.value?.collaboration?.seo || {}, site.value?.favicon || {}))
 
 
 useHead({

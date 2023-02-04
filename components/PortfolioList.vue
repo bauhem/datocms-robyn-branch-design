@@ -57,6 +57,7 @@
             >
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
+                  
                   <NuxtLink v-if="route.path === '/portfolios'"
                     :to="'/portfolios/' + item.slug"
                     class="hover-link w-inline-block"

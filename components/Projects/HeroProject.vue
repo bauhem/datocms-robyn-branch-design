@@ -5,7 +5,7 @@
       
       <div class="container">
         <div class="hero-wrapper-content">
-          <NuxtLink :to="'/portfolios/' + back" class="back-link w-inline-block"
+          <NuxtLink :to="back" class="back-link w-inline-block"
             ><img
               src="/images/round-arrow-back_24dp-white.svg"
               loading="lazy"

@@ -1,5 +1,5 @@
 <template>
-  <ProjectsHeroProject :item="page" :back="collectionData.portfolio.category" />
+  <ProjectsHeroProject :item="page" :back="'/portfolios/' + collectionData.portfolio.category" />
   <section class="section whitesmoke wf-section">
     <div class="container">
         <StructuredText
