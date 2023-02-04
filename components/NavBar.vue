@@ -11,9 +11,8 @@
     <div class="nav-container w-container">
       <div class="nav-menu-wrapper">
         <NuxtLink to="/" class="brand w-nav-brand"
-          ><img
+          ><nuxt-img
             src="https://robyn-branch-designs.netlify.app/images/logo.webp"
-            loading="lazy"
             width="175px"
             height="25px"
             alt=""
