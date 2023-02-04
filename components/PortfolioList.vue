@@ -59,12 +59,11 @@
                 <div class="hover-link-wrapper project-view-link">
                   <NuxtLink
                     :to="
-                      item.category
-                        ? '/portfolio/' + item.category + '/' + item.slug
-                        : route.path === '/press' ? item.link :  '/portfolio/' + item.slug
+                      item.category ? '/portfolios/' + item.category + '/' + item.slug
+                        : route.path === '/press' ? item.link : route.path === '/collaborations' ? '/collaborations/' + item.slug : '/' + item.slug
                     "
                     class="hover-link w-inline-block"
-                    v-bind:target="{ '_blank': route.path !== '/press' }"
+                    v-bind:target="{ '_blank': route.path === '/press' }"
                   >
                     <div>View</div>
                   </NuxtLink>
@@ -158,6 +157,25 @@ if (route.path === '/portfolio') {
       `,
   })
   portfolio = pressData
+} else if (route.path === '/collaborations') {
+  const { data: collaborationData } = await useGraphqlQuery({
+    query: `query Page {
+          project: allCollaborations(orderBy: position_ASC) {
+            position
+            title
+            coverImage {
+              responsiveImage(imgixParams: { fit: fill, auto: format, w: 550 }) {
+                ...imageFields
+              }
+            }
+            slug
+            id
+          }
+        }
+            ${imageFields}
+      `,
+  })
+  portfolio = collaborationData
 } else {
   const { data: portfolioData } = await useGraphqlQuery({
     query: `query Page {
