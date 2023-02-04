@@ -87,6 +87,6 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { Image, StructuredText } from 'vue-datocms'
+import { Image } from 'vue-datocms'
 
 </script>

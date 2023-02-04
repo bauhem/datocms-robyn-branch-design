@@ -1,24 +1,25 @@
 <template>
-    <div style="min-height:100vh">
-
-
-    <component
-      v-for="component in components"
-      v-once
-      :key="component"
-      :is="component.component"
-      v-bind:item="component.data"
-      v-bind:slug="route.path"
-    />
-
-
-
-  </div>
+  <component
+    v-for="component in components"
+    v-once
+    :key="component"
+    :is="component.component"
+    v-bind:item="component.data"
+    v-bind:route="route.path"
+  />
+  <section v-if="page.content.value.document.children.filter(child => child.type !== 'block').length > 0" class="section whitesmoke wf-section">
+    <div class="container">
+      <StructuredText :data="page.content" :renderBlock="renderBlock" />
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import {toHead, Image as DatocmsImage, StructuredText as DatocmsStructuredText,} from 'vue-datocms'
-
+import { toHead, Image, StructuredText } from 'vue-datocms'
+import ImageBlock from '@/components/ImageBlock.vue'
+import Gallery from '@/components/Gallery.vue'
+import HeroInterior from '@/components/HeroInterior.vue'
+import PortfolioList from '@/components/PortfolioList.vue'
 
 import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
@@ -36,14 +37,6 @@ const { data } = await useGraphqlQuery({
             value
             blocks {
               __typename
-              ... on HeroRecord {
-                id
-                image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, auto: format, w: 2000, h: 1000}) {
-                    ...imageFields
-                  }
-                }
-              }
               ... on PortfolioListRecord {
                 id
                 title
@@ -90,22 +83,31 @@ const { data } = await useGraphqlQuery({
   },
 })
 
+if (!data.value?.page) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+}
 
+const page = computed(() => data.value?.page)
+const site = computed(() => data.value?.site)
 
-const components = data?.value?.page?.content?.blocks.map((item: { __typename: any })=> {
-  const {__typename, ...data} = item;
-  // split the data and the component instance so you can v-bind the data easier in the template
-  if (__typename) {
+const components = data?.value?.page?.content?.blocks.map(
+  (item: { __typename: any }) => {
+    const { __typename, ...data } = item
     // split the data and the component instance so you can v-bind the data easier in the template
-    return {
-      data: data,
-      component: defineAsyncComponent(() => import(`../components/${__typename.replace("Record", "")}.vue`))
-      // A note is that if you use path aliases for dynamic imports like @ or ~ you might experience issues.
+    if (__typename) {
+      // split the data and the component instance so you can v-bind the data easier in the template
+      return {
+        data: data,
+        component: defineAsyncComponent(
+          () => import(`../components/${__typename.replace('Record', '')}.vue`)
+        ),
+        // A note is that if you use path aliases for dynamic imports like @ or ~ you might experience issues.
+      }
+    } else {
+      return {}
     }
-  } else {
-    return {};
   }
-})
+)
 
 const renderBlock = ({ record }) => {
   return null
@@ -127,16 +129,16 @@ useHead(() => {
 
 <script lang="ts">
 export default {
-   mounted() {
+  mounted() {
     this.$nextTick(function () {
       $(document).ready(function () {
         // eslint-disable-next-line no-undef
-        window.Webflow && window.Webflow.destroy();
-        window.Webflow && window.Webflow.ready();
-        window.Webflow && window.Webflow.require("ix2").init();
-        document.dispatchEvent(new Event("readystatechange"));
-      });
-    });
-  }
-};
+        window.Webflow && window.Webflow.destroy()
+        window.Webflow && window.Webflow.ready()
+        window.Webflow && window.Webflow.require('ix2').init()
+        document.dispatchEvent(new Event('readystatechange'))
+      })
+    })
+  },
+}
 </script>

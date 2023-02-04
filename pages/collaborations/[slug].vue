@@ -15,11 +15,7 @@ import { h } from 'vue'
 
 import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
-import {
-  toHead,
-  Image,
-  StructuredText,
-} from 'vue-datocms'
+import { toHead, Image, StructuredText } from 'vue-datocms'
 import ImageBlock from '@/components/ImageBlock.vue'
 import Gallery from '@/components/Gallery.vue'
 
