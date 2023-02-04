@@ -1,5 +1,7 @@
 <template>
-  <section class="section wf-section">
+  <section class="section wf-section"
+  v-bind:class="{ ' white': route.path !== '/' }"
+  >
     <div class="container">
       <div class="wrapper">
         <div
@@ -28,5 +30,6 @@ export default {
 </script>
 <script setup>
 import { Image } from 'vue-datocms'
+const route = useRoute()
 
 </script>
