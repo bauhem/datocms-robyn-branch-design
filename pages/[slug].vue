@@ -55,6 +55,10 @@ const { data } = await useGraphqlQuery({
                   }
                 }
               }
+              ... on ContactRecord {
+                id
+                title
+              }
               ... on AboutUsModelRecord {
                 id
                 title
