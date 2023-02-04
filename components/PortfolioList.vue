@@ -57,16 +57,36 @@
             >
               <div class="project-hover-link-wrapper">
                 <div class="hover-link-wrapper project-view-link">
-                  <NuxtLink
-                    :to="
-                      item.category ? '/portfolios/' + item.category + '/' + item.slug
-                        : route.path === '/press' ? item.link : route.path === '/collaborations' ? '/collaborations/' + item.slug : '/' + item.slug
-                    "
+                  <NuxtLink v-if="route.path === '/portfolios'"
+                    :to="'/portfolios/' + item.slug"
                     class="hover-link w-inline-block"
-                    v-bind:target="{ '_blank': route.path === '/press' }"
                   >
                     <div>View</div>
                   </NuxtLink>
+
+                  <NuxtLink v-if="item.category"
+                    :to="'/portfolios/' + item.category + '/' + item.slug"
+                    class="hover-link w-inline-block"
+                  >
+                    <div>View</div>
+                  </NuxtLink>
+
+                  <NuxtLink v-if="route.path === '/press'"
+                    :to="item.link"
+                    class="hover-link w-inline-block"
+                    target="_blank"
+                  >
+                    <div>View</div>
+                  </NuxtLink>
+
+                  <NuxtLink v-if="route.path === '/collaborations'"
+                    :to="'/collaborations/' + item.slug"
+                    class="hover-link w-inline-block"
+                  >
+                    <div>View</div>
+                  </NuxtLink>
+
+
                 </div>
               </div>
               <div class="project-info-top">
@@ -97,7 +117,7 @@ import { imageFields } from '~~/utils/graphql'
 const route = useRoute()
 
 let portfolio
-if (route.path === '/portfolio') {
+if (route.path === '/portfolios') {
   const { data: portfolioData } = await useGraphqlQuery({
     query: `query Page {
           project: allPages(orderBy: position_ASC, filter: {parent: {eq: 108579675}}) {
