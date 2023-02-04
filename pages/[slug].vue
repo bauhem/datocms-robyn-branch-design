@@ -10,19 +10,7 @@
       v-bind:item="component.data"
       v-bind:slug="route.path"
     />
-    <section v-if="data.page.content.value.document.children[1]" class="section white wf-section">
-    <div class="container">
-      <div class="projects-grid">
-        <div class="interior-wrapper">
-          <div class="rich-text w-richtext">
-               <datocms-structured-text :data="data.page.content" :renderBlock="renderBlock" />
-            </div>
-          <a href="contact.html" class="button in-navbar w-button">Contact Us</a>
-        </div>
-        <div class="interior-wrapper"><img src="/images/about-image.jpg" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 47vw, (max-width: 991px) 46vw, 538px" srcset="/images/about-image-p-500.jpg 500w, /images/about-image.jpg 538w" alt="" class="image-robin"></div>
-      </div>
-    </div>
-  </section>
+
 
 
   </div>
