@@ -10,7 +10,7 @@
       v-bind:item="component.data"
       v-bind:slug="route.path"
     />
-    <section class="section white wf-section">
+    <section v-if="data.page.content.value.document.children[1]" class="section white wf-section">
     <div class="container">
       <div class="projects-grid">
         <div class="interior-wrapper">
@@ -120,17 +120,7 @@ const components = data?.value?.page?.content?.blocks.map((item: { __typename: a
 })
 
 const renderBlock = ({ record }) => {
-  if (record.__typename) {
-    return null
-  }
-  return h(
-    'div',
-    {},
-    [
-      h('p', {}, "Don't know how to render a block!"),
-      h('pre', {}, JSON.stringify(record, null, 2)),
-    ]
-  );
+  return null
 }
 
 useHead({
