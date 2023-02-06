@@ -46,6 +46,12 @@ const { data } = await useGraphqlQuery({
                 title
                 subtitle
               }
+              ... on QuoteRecord {
+                id
+                intro
+                quote
+                description
+              }
               ... on CtaBannerRecord {
                 id
                 title

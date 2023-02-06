@@ -51,7 +51,7 @@
               </div>
             </div>
             <div
-              id="w-node-_8aaf55a3-d100-f831-0ec6-5d64de2c1cf7-de2c1cf3"
+              id="w-node-a5630c9a-d2b8-4529-6234-5a93e03a6963-cfcfa80c"
               class="project-card-info"
               v-bind:class="{ ' _3-collumns': route.path === '/press' }"
             >

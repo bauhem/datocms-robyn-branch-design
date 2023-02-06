@@ -34,6 +34,11 @@ const { data } = await useGraphqlQuery({
               __typename
               ... on HeroRecord {
                 id
+                surtitle
+                title
+                subtitle
+                description1
+                description2
                 featuredPortfolio {
                   id
                   title

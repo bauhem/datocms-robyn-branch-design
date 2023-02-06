@@ -8,12 +8,16 @@
       :is="component.component"
       v-bind:item="component.data"
     />
+    <section v-if="page.content.value.document.children.filter(child => child.type !== 'block').length > 0" class="section white wf-section">
+      <div class="container">
+        <StructuredText :data="page.content" :renderBlock="renderBlock" />
+      </div>
+    </section>
     </div>
 </template>
 
 <script setup lang="ts">
-import {toHead, Image as DatocmsImage, StructuredText as DatocmsStructuredText,} from 'vue-datocms'
-
+import { toHead, Image, StructuredText } from 'vue-datocms'
 
 import { imageFields, seoMetaTagsFields, formatDate } from '~~/utils/graphql'
 
@@ -38,6 +42,12 @@ const { data } = await useGraphqlQuery({
                     ...imageFields
                   }
                 }
+              }
+              ... on QuoteRecord {
+                id
+                intro
+                quote
+                description
               }
               ... on PortfolioListRecord {
                 id
@@ -85,7 +95,12 @@ const { data } = await useGraphqlQuery({
   },
 })
 
+if (!data.value?.page) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+}
 
+const page = computed(() => data.value?.page)
+const site = computed(() => data.value?.site)
 
 const components = data?.value?.page?.content?.blocks.map((item: { __typename: any })=> {
   const {__typename, ...data} = item;
@@ -101,6 +116,10 @@ const components = data?.value?.page?.content?.blocks.map((item: { __typename: a
     return {};
   }
 })
+
+const renderBlock = ({ record }) => {
+  return null
+}
 
 useHead({
   htmlAttrs: {

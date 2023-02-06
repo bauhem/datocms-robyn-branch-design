@@ -3,7 +3,7 @@
     <div class="div-cta">
       <div class="container">
         <div class="div-cta-block">
-          <div v-html="'Interior design studio in Florida &amp; South-Carolina<br />'"
+          <div v-html="item.surtitle"
             style="opacity: 0"
             class="cta-paragraph small"
           >
@@ -11,13 +11,13 @@
           </div>
           <div v-html="`<h1 style='opacity: 0' 
             class='cta-heading home'>
-            We believe in the<br />power of design
+            ${item.title}
           </h1>`"
           >
           </div>
 
           <div class="w-layout-grid grid">
-            <div v-html="'Let make your life better together.'"
+            <div v-html="item.subtitle"
               id="w-node-_764c9d0f-554b-7c8f-0f8b-3661375b9217-cfcfa80c"
               class="cta-paragraph"
             >
@@ -29,18 +29,14 @@
               class="button w-button"
               >View Portfolio</NuxtLink
             >
-            <div v-html="`Robyn Branch Design is a premier design firm that specializes in
-              creating beautiful and functional spaces that reflect the personal
-              tastes and preferences of their clients.`"
+            <div v-html="item.description1"
               id="w-node-d1840ad3-bb2a-af03-b599-b9c65d3a4def-cfcfa80c"
 
               class="cta-paragraph x-small"
             >
               
             </div>
-            <div v-html="`We collaborate with the best people in the field to deliver
-              beautifully curated spaces to create a customized, original, and
-              beautiful sanctuary that functions well.`"
+            <div v-html="item.description2"
               id="w-node-_2d65b743-435c-b4ec-4d79-aee1ea64c7a4-cfcfa80c"
               class="cta-paragraph x-small"
             >
