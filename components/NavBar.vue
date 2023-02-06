@@ -88,7 +88,7 @@
                 class="nav-link"
                 >{{ item.title }}</NuxtLink
               >
-              <NuxtLink :to="contact.slug" class="button in-navbar">{{
+              <NuxtLink :to="'/'+contact.slug" class="button in-navbar">{{
                 contact.title
               }}</NuxtLink>
             </div>
