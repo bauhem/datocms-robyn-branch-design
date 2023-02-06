@@ -10,7 +10,7 @@
         >
           <div v-html='`<h3 class="section-title">${ item.title }</h3>`'></div>
           <div v-html="item.description" class="p-light"></div>
-          <NuxtLink :to="'/contact'" class="button in-navbar w-button">Learn more</NuxtLink>
+          <NuxtLink :to="'/about-us'" class="button in-navbar w-button">Learn more</NuxtLink>
         </div>
         <div class="div-wrapper">
            <Image class="img-robyn" sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, 46vw"  objectFit="cover" :data="item.image.responsiveImage" />

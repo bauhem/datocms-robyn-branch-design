@@ -13,7 +13,7 @@
         class="div-wrapper-third"
       >
         <div class="section-title">{{ item.title }}</div>
-        <NuxtLink :to="'/' + item.slug" class="button in-navbar w-button">Contact us</NuxtLink>
+        <NuxtLink :to="'/contact'" class="button in-navbar w-button">Contact us</NuxtLink>
       </div>
     </div>
   </section>
