@@ -37,11 +37,6 @@ const { data } = await useGraphqlQuery({
               __typename
               ... on HeroRecord {
                 id
-                image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, auto: format, w: 2000, h: 1000}) {
-                    ...imageFields
-                  }
-                }
               }
               ... on QuoteRecord {
                 id
